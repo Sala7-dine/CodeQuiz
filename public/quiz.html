@@ -4,10 +4,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeQuiz | Home</title>
+    <title>CodeQuiz | Quiz</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
 
@@ -22,17 +21,72 @@
     <!-- Home -->
     <section class="w-full flex justify-center items-center h-screen bg-[#090E34]">
      
-        <div class="absolute flex py-5 px-16 justify-between top-0 w-full text-white text-[20px] font-bold">
+        <div class="absolute flex py-5 px-2 justify-between top-4 w-10/12 text-white text-[20px] font-bold">
 
             <h1>Timer : 3 min</h1>
             <h1>Q : 1/10</h1>
             <h1>Sccore : 150</h1>
         </div>
 
-      <div class="bg-[#081f4f]  w-full h-4/5 shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] font-[sans-serif] ">
+      <div class="relative flex z-50 justify-center items-center bg-[#161e6bbc] w-10/12 h-1/2 mt-[-150px] rounded-br-reduis rounded-bl-reduis shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] font-[sans-serif] ">
+
+        <h1 class="font-sans text-[40px] text-wrap text-white text-center font-bold w-11/12"> Lorem ipsum dolor, sit amet consectetur adipisicing elit ?</h1>
+        
+
+        <div class="absolute flex justify-between w-full">
+          <button
+          class='max-md:hidden h-12 w-12 text-sm text-center rounded-tr-xl rounded-br-xl font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>
+          <i class="fa fa-arrow-circle-left" style="font-size:25px"></i>
+         </button>
+          <button
+          class='max-md:hidden h-12 w-12 text-sm text-center rounded-tl-xl rounded-bl-xl font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>
+          <i class="fa fa-arrow-circle-right" style="font-size:25px"></i>
+         </button>
+
+        </div>
+
+      </div>
 
 
+      <div class="absolute bottom-32 space-x-6 flex justify-between w-8/12 flex-wrap">
 
+        <div class="flex items-center justify-center w-52 bg-[#dfdfdf] py-4 text-center rounded-md">
+
+          <h1 class="text-black text-[25px] px-4">reponse 1</h1>
+          <input id="radio" type="radio" name="value1" class="w-5 h-5 hidden peer" checked />
+          <label for="radio"
+            class="relative flex items-center justify-center p-1 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-6 h-6 cursor-pointer border-2 border-blue-500 rounded-full overflow-hidden">
+            <span class="bg-blue-500 rounded-full w-3 h-3"></span>
+          </label>
+        </div>
+      
+        <div class="flex items-center justify-center w-52 bg-[#dfdfdf] py-4 text-center rounded-md">
+          <h1 class="text-black text-[25px] px-4">reponse 2</h1>
+          <input id="radio1" type="radio" name="value1" class="w-5 h-5 hidden peer" />
+          <label for="radio1"
+            class="relative flex items-center justify-center peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-6 h-6 cursor-pointer border-2 border-blue-500 rounded-full overflow-hidden">
+            <span class="border-[6px] border-blue-500 rounded-full w-full h-full"></span>
+          </label>
+        </div>
+      
+        <div class="flex items-center justify-center w-52 bg-[#dfdfdf] py-4 text-center rounded-md">
+          <h1 class="text-black text-[25px] px-4">reponse 3</h1>
+          <input id="radio2" type="radio" name="value1" class="w-5 h-5 hidden peer" />
+          <label for="radio2"
+            class="relative p-0.5 flex items-center justify-center peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-6 h-6 cursor-pointer border-2 border-blue-500 rounded-full overflow-hidden">
+            <span class="border-[6px] border-blue-500 rounded-full w-full h-full"></span>
+          </label>
+        </div>
+      
+        <div class="flex items-center justify-center w-52 bg-[#dfdfdf] py-4 text-center rounded-md">
+          <h1 class="text-black text-[25px] px-4">reponse 4</h1>
+          <input id="radio3" type="radio" name="value1" class="w-5 h-5 hidden peer" />
+          <label for="radio3"
+            class="relative p-0.5 flex items-center justify-center peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-6 h-6 cursor-pointer border-2 border-blue-500 rounded-full overflow-hidden">
+            <span class="border-[6px] border-blue-500 rounded-full w-full h-full"></span>
+          </label>
+        </div>
+      
       </div>
 
     </section>

@@ -10,6 +10,10 @@ module.exports = {
 
        backgroundImage: {
         'shape': "url('/images/shapes.svg')",
+      } , 
+
+      borderRadius: {
+        'reduis': '20px'
       }
     },
   },
