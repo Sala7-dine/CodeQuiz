@@ -12,15 +12,15 @@
 <body>
 
     <!-- Header -->
-    <header class='flex justify-center items-center py-6 px-16 sm:px-16 bg-transparent absolute font-[sans-serif] min tracking-wide z-50 w-full'>
+    <header class='flex justify-center items-center py-6 px-16 max-md:px-6 sm:px-16 bg-transparent absolute font-[sans-serif] min tracking-wide z-50 w-full'>
         <div class='flex flex-wrap items-center justify-between gap-5 w-full'>
-          <a href="javascript:void(0)"><img src="../images/code-light.svg" alt="logo" class='w-24' />
+          <a href="javascript:void(0)"><img src="../images/logo.svg" alt="logo" class='w-44 max-md:w-32' />
           </a>
       
           <div id="collapseMenu"
-            class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
+            class='max-lg:hidden lg:!block max-lg:before:fixed max-lg:before:bg-[#090E34] max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
             <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-[#090E34]" viewBox="0 0 320.591 320.591">
                 <path
                   d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
                   data-original="#000000"></path>
@@ -31,9 +31,9 @@
             </button>
       
             <ul
-              class='max-lg:bg-black lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+              class='max-lg:bg-[#0c0f24] lg:flex gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
               <li class='mb-6 hidden max-lg:block'>
-                <a href="javascript:void(0)"><img src="../images/dark-logo.svg" alt="logo" class='w-36' />
+                <a href="javascript:void(0)"><img src="../images/logo.svg" alt="logo" class='w-32' />
                 </a>
               </li>
               <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'>
@@ -54,7 +54,7 @@
       
           <div class='flex max-lg:ml-auto space-x-3'>
             <button
-              class='max-md:hidden px-6 py-3 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-transparent hover:bg-[#2f49af]'>Premuim</button>
+              class='max-md:hidden px-6 py-3 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>Premuim</button>
       
             <button id="toggleOpen" class='lg:hidden'>
               <svg class="w-7 h-7" fill="#fff" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -70,26 +70,26 @@
     <!-- Home -->
     <section class="w-full flex justify-center items-center h-screen p-24 relative bg-[#090E34]">
       <div>
-        <img class="absolute right-0 top-0" src="../images/Group 1.svg" alt="">
+        <img class="absolute right-0 top-0 max-md:w-40" src="../images/Group 1.svg" alt="">
       </div>
       <div>
-        <img class="absolute left-0 bottom-0" src="../images/Group 2.svg" alt="">
+        <img class="absolute left-0 bottom-0 max-md:w-60" src="../images/Group 2.svg" alt="">
       </div>
       
       <div class="absolute flex flex-col gap-6 justify-center items-center">
         <h1 class="text-white text-[60px] font-extrabold text-center leading-tight max-md:text-[40px]"> Lorem, ipsum dolor <br>
                 Lorem ipsum dolor sit.</h1>
 
-            <p class="text-white text-[18px] text-center font-semibold max-md:text-[12px] w-2/5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, exercitationem! Eaque animi voluptatem molestias nostrum? Animi recusandae incidunt tenetur. Aliquam libero commodi totam</p>
+            <p class="text-white text-[18px] text-center font-semibold max-md:text-[14px] w-2/5 max-md:w-11/12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, exercitationem! Eaque animi voluptatem molestias nostrum? Animi recusandae incidunt tenetur. Aliquam libero commodi totam</p>
 
 
             <div class="flex gap-2">
 
               <button
-            class='max-md:hidden px-6 py-3 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-transparent hover:bg-[#2f49af]'>Get Started</button>
+            class='px-6 py-3 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>Get Started</button>
 
               <button
-            class='max-md:hidden px-6 py-3 text-sm rounded-md font-bold text-white bg-[#61616191] transition-all ease-in-out duration-300 hover:bg-transparent hover:bg-[#2f49af]'>Learn more</button>
+            class='px-6 py-3 text-sm rounded-md font-bold text-white bg-[#61616191] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>Learn more</button>
 
             </div>
 
@@ -102,228 +102,15 @@
 
     <!-- Cards Quiz -->
 
-    <section class="min-h-screen bg-[#090E34] bg-opacity-98 p-12 flex flex-col justify-center items-center"> 
+    <section class="min-h-screen bg-[#090E34] bg-opacity-98 py-14 max-md:p-1 m-auto flex flex-col justify-center items-center"> 
 
       
       <h1 class="text-white text-5xl font-sans p-4 my-20 text-center font-extrabold border-b-8 border-[#4a6cf7]">Quizzes Game</h1>
 
-      <div class="flex justify-center gap-5 flex-wrap">
+      <div class="flex flex-wrap justify-center gap-5" id="cardsParents">
         
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-yellow-500">Facile</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-green-500">Moyenne</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-red-500">difficile</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-red-500">difficile</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-yellow-500">Facile</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-green-500">Moyenne</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-yellow-500">Facile</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-green-500">Moyenne</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
-        
-          <div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] w-96 max-w-sm rounded-lg overflow-hidden font-[sans-serif] ">
-          <div class="min-h-[256px]">
-            <img src="https://readymadeui.com/Imagination.webp" class="w-full" />
-          </div>
-    
-          <div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm  top-3 left-3 text-[14px] font-medium">Q : 10</div>
-              <div class="absolute px-2 bg-yellow-500 rounded-sm top-3 right-3 text-[14px] font-medium">T : 5min</div>
-          </div>
-    
-          <div class="p-6">
-            <div>
-              <h3 class="text-white mt-3 text-xl font-bold text-[30px]">Javascript <span class="float-end font-medium  text-[14px] text-red-500">difficile</span></h3>
-            </div>
-            <p class="mt-4 text-sm text-white leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu, at fermentum dui. Maecenas  
-            </p>
-            <button
-            class='max-md:hidden px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
-    
-          </div>
-        </div>
-     
+
+
         
 
       </div>
@@ -415,10 +202,7 @@
     </div>
 
 
-
-
     <!-- Footer -->
-
 
     <footer class="font-sans tracking-wide bg-[#090E34] py-10 px-10">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ml-24" >
@@ -505,8 +289,7 @@
 
     
 
-  
-
+<script src="data.js"></script>
 <script src="main.js"></script>
 
 
