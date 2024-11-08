@@ -16,7 +16,7 @@ const QuizData = {
           type: 'boolean',
           question: 'Le JavaScript est un langage synchrone par défaut?',
           options: ['Vrai','Faux'],
-          correctAnswer: false,
+          correctAnswer: 1,
             
           explanation: 'JavaScript est single-threaded mais asynchrone.'
         },
@@ -32,7 +32,7 @@ const QuizData = {
             type: 'boolean',
             question: 'Le JavaScript est un langage synchrone par défaut?',
             options: ['Vrai','Faux'],
-            correctAnswer: false,
+            correctAnswer: 0,
             explanation: 'JavaScript est single-threaded mais asynchrone.'
           },
           {
@@ -47,7 +47,7 @@ const QuizData = {
               type: 'boolean',
               question: 'Le JavaScript est un langage synchrone par défaut?',
               options: ['Vrai','Faux'],
-              correctAnswer: false,
+              correctAnswer: 1,
               explanation: 'JavaScript est single-threaded mais asynchrone.'
             }
     ] , 
@@ -66,7 +66,7 @@ const QuizData = {
           type: 'boolean',
           question: 'Le html est un langage synchrone par défaut?',
           options: ['Vrai','Faux'],
-          correctAnswer: false,
+          correctAnswer: 1,
           explanation: 'html est single-threaded mais asynchrone.'
         },
         {
@@ -81,7 +81,7 @@ const QuizData = {
             type: 'boolean',
             question: 'Le html est un langage synchrone par défaut?',
             options: ['Vrai','Faux'],
-            correctAnswer: false,
+            correctAnswer: 1,
             explanation: 'html est single-threaded mais asynchrone.'
           },
           {
@@ -96,7 +96,7 @@ const QuizData = {
               type: 'boolean',
               question: 'Le html est un langage synchrone par défaut?',
               options: ['Vrai','Faux'],
-              correctAnswer: false,
+              correctAnswer: 1,
               explanation: 'html est single-threaded mais asynchrone.'
             }
     ] 

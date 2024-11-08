@@ -1,4 +1,7 @@
 let savedValue = localStorage.getItem("clickedCard").toLocaleLowerCase();
+let nextBtn = document.getElementById("nextBtn");
+
+
 
 let valueSelected = QuizData[savedValue];
 
@@ -6,10 +9,11 @@ Quizze(valueSelected);
 
 function Quizze(value){
 
+  let textType = true;
   // Response data-----------------------------------------------------------
 let res = (id , reponse) => {
   let div = `<label class="z-50 btn">
-           <input type="radio" name="reponse" class="hidden" onclick="selectResponse('response${id}' , ${id})" />
+           <input type="radio" name="reponse" class="hidden responseInput" onclick="selectResponse('response${id}' , ${id})" />
            <div id="response${id}" class="px-8 py-4  rounded-lg cursor-pointer bg-gray-200">
                ${reponse}
            </div>
@@ -34,44 +38,72 @@ value.forEach(question => {
 // Radio response button -------------------------------------------------
 
 window.selectResponse = function (selectedId , id) {
-   
-   document.querySelectorAll('div[id^="response"]').forEach(div => {
-       div.classList.remove('bg-blue-500', 'text-white');
-       div.classList.add('bg-gray-200');
-   });
+  nextBtn.style.visibility = "visible";
 
-
-   //console.log(id);
-
-
-   correctAnswers(id);
-  //  value.forEach(res => {
-
-  //  })
-   
-   document.getElementById(selectedId).classList.remove('bg-gray-200');
-   document.getElementById(selectedId).classList.add('bg-blue-500', 'text-white');
-
-}
-
-// Correct Answers ----------------------------------------------------
-
-function correctAnswers(id){  
-
+  if(--id == value[currentTab].correctAnswer){
   
+    let responseInput = document.querySelectorAll(".responseInput");
+    document.querySelectorAll('div[id^="response"]').forEach(div => {
+        div.classList.remove('bg-green-500', 'text-white');
+        div.classList.add('bg-gray-500');
+    });
 
-  console.log(value[currentTab].type);
+        
+    document.getElementById(selectedId).classList.remove('bg-gray-500');
+    document.getElementById(selectedId).classList.add('bg-green-500', 'text-white');
 
-//   document.querySelectorAll('div[id^="response"]').forEach(div => {
-//     div.classList.remove('bg-blue-500', 'text-white');
-//     div.classList.add('bg-gray-200');
-// });
 
-// document.getElementById(selectedId).classList.remove('bg-gray-200');
-// document.getElementById(selectedId).classList.add('bg-blue-500', 'text-white');
+    responseInput.forEach(input => {
+      input.disabled = true;
+    });
+  
+  } else {
+    let responseInput = document.querySelectorAll(".responseInput");
+    document.querySelectorAll('div[id^="response"]').forEach(div => {
+      div.classList.remove('bg-green-500', 'text-white');
+      div.classList.add('bg-gray-500');
+      });
 
-  //console.log(value[0].type);
+    responseInput.forEach(input => {
+      input.disabled = true;
+    })
+  
+  document.getElementById(selectedId).classList.remove('bg-gray-200');
+  document.getElementById(selectedId).classList.add('bg-red-500', 'text-white');
+  
+  }
+
 }
+
+// Radio response button -------------------------------------------------
+
+window.textInput = function (){
+
+  nextBtn.style.visibility = "visible";
+  console.log("here input text");
+  let selectInput = document.getElementById("selectInput");
+  let textBtn = document.getElementById("textBtn");
+
+  let result = selectInput.value;  
+  
+  if(value[currentTab].correctAnswer.includes(result)){
+    console.log(true);
+    selectInput.disabled = true;
+    textBtn.disabled = true;
+    selectInput.style.backgroundColor = "green";
+    textBtn.style.backgroundColor = "green";
+
+  }else{
+    selectInput.disabled = true;
+    textBtn.disabled = true;
+    selectInput.style.backgroundColor = "red";
+    textBtn.style.backgroundColor = "red";
+    console.log('tota');
+  }
+
+ 
+}
+
 
 // Timer -------------------------------------------------------------
 
@@ -97,7 +129,7 @@ var currentTab = 0;
 showTab(currentTab);
 
 function showTab(n) {
-
+  nextBtn.style.visibility = "hidden";
  var x = document.getElementsByClassName("tab");
  x[n].style.display = "block";
 
@@ -114,26 +146,28 @@ function showTab(n) {
  Parentrsp.innerHTML = "";
  
  if("options" in value[currentTab]){
+ 
+  textType = true; 
    let taille = value[currentTab].options.length;
    for(let i=0; i< taille ; i++){
        let response = res(i+1 , value[currentTab].options[i]);   
      //console.log(response);
-     
+
      Parentrsp.innerHTML += response;
-
-
-     
    } 
  }else{
 
    //console.log(Parentrsp);
+   
+   textType = false;
    Parentrsp.innerHTML = `<div class="font-[sans-serif] max-w-md mx-auto">
-  <input type="text" placeholder="Saisir votre reponse..."
+  <input type="text" placeholder="Saisir votre reponse..." id="selectInput"
     class="px-4 py-3 bg-gray-100 w-full text-sm outline-none border-b-2 border-blue-500 rounded" />
 
-  <button type="button"
+  <button type="button" onclick='textInput()' id="textBtn"
     class="!mt-2 w-full px-4 py-2.5 mx-auto block text-sm bg-blue-500 text-white rounded hover:bg-blue-600">Submit</button>
-</div>`
+  </div>`
+
  }
 
 
