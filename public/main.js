@@ -39,7 +39,7 @@ const TemplateCard = function(id,title , desc , nv , qs , time){
               <h3 class="text-white mt-3 text-xl font-bold text-[30px]">${title} <span class="float-end font-medium  text-[14px] ${nv =='facile' ? 'text-yellow-500' : ''} ${nv =='moyenne' ? 'text-green-500' : ''} ${nv =='difficile' ? 'text-red-500' : ''}">${nv}</span></h3>
             </div>
             <p class="mt-4 text-sm text-white leading-relaxed">${desc}</p>
-            <button id="${id}"
+            <button value="${title}"
             class='btnValue px-6 py-3 my-2 mt-5 text-sm rounded-md font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af] '>Play Now</button>
     
           </div>
@@ -65,8 +65,9 @@ let btnValue = document.querySelectorAll(".btnValue");
 btnValue.forEach(btn =>
 
     btn.addEventListener("click" ,(e)=>{
-        let clickedCard = e.target.id;
+        let clickedCard = e.target.value;
         localStorage.setItem("clickedCard" , clickedCard);
+        window.location.href = "quiz.html"
         console.log(clickedCard);
     })
 )

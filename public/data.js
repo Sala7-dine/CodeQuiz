@@ -1,53 +1,112 @@
-const javascript = [
 
-    {
-      id: 1,
-      type: 'mcq',
-      question: 'Quelle méthode JavaScript permet de filtrer les éléments d\'un tableau?',
-      options: ['map()', 'filter()', 'reduce()', 'forEach()'],
-      correctAnswer: 1,
-      explanation: 'filter() crée un nouveau tableau avec les éléments qui passent le test.'
-    },
-    {
-      id: 2,
-      type: 'boolean',
-      question: 'Le JavaScript est un langage synchrone par défaut?',
-      options: ['Vrai','Faux'],
-      correctAnswer: false,
-      explanation: 'JavaScript est single-threaded mais asynchrone.'
-    },
-    {
-      id: 3,
-      type: 'text',
-      question: 'Quelle méthode permet d\'ajouter un élément à la fin d\'un tableau?',
-      correctAnswer: ['push', 'push()', '.push', '.push()'],
-      explanation: 'La méthode push() ajoute un ou plusieurs éléments à la fin d\'un tableau.'
-    },
-    {
-        id: 4,
-        type: 'boolean',
-        question: 'Le JavaScript est un langage synchrone par défaut?',
-        options: ['Vrai','Faux'],
-        correctAnswer: false,
-        explanation: 'JavaScript est single-threaded mais asynchrone.'
-      },
-      {
-        id: 5,
-        type: 'text',
-        question: 'Quelle méthode permet d\'ajouter un élément à la fin d\'un tableau?',
-        correctAnswer: ['push', 'push()', '.push', '.push()'],
-        explanation: 'La méthode push() ajoute un ou plusieurs éléments à la fin d\'un tableau.'
-      },
-      {
-          id: 6,
+
+const QuizData = {
+
+    javascript : [
+        {  
+          id: 1,
+          type: 'mcq',
+          question: 'Quelle méthode JavaScript permet de filtrer les éléments d\'un tableau?',
+          options: ['map()', 'filter()', 'reduce()', 'forEach()'],
+          correctAnswer: 1,
+          explanation: 'filter() crée un nouveau tableau avec les éléments qui passent le test.'
+        },
+        {
+          id: 2,
           type: 'boolean',
           question: 'Le JavaScript est un langage synchrone par défaut?',
           options: ['Vrai','Faux'],
           correctAnswer: false,
+            
           explanation: 'JavaScript est single-threaded mais asynchrone.'
-        }
+        },
+        {
+          id: 3,
+          type: 'text',
+          question: 'Quelle méthode permet d\'ajouter un élément à la fin d\'un tableau?',
+          correctAnswer: ['push', 'push()', '.push', '.push()'],
+          explanation: 'La méthode push() ajoute un ou plusieurs éléments à la fin d\'un tableau.'
+        },
+        {
+            id: 4,
+            type: 'boolean',
+            question: 'Le JavaScript est un langage synchrone par défaut?',
+            options: ['Vrai','Faux'],
+            correctAnswer: false,
+            explanation: 'JavaScript est single-threaded mais asynchrone.'
+          },
+          {
+            id: 5,
+            type: 'text',
+            question: 'Quelle méthode permet d\'ajouter un élément à la fin d\'un tableau?',
+            correctAnswer: ['push', 'push()', '.push', '.push()'],
+            explanation: 'La méthode push() ajoute un ou plusieurs éléments à la fin d\'un tableau.'
+          },
+          {
+              id: 6,        
+              type: 'boolean',
+              question: 'Le JavaScript est un langage synchrone par défaut?',
+              options: ['Vrai','Faux'],
+              correctAnswer: false,
+              explanation: 'JavaScript est single-threaded mais asynchrone.'
+            }
+    ] , 
 
-];
+    html : [
+        {
+          id: 1,
+          type: 'mcq',
+          question: 'Quelle méthode html permet de filtrer les éléments d\'un tableau?',
+          options: ['map()', 'filter()', 'reduce()', 'forEach()'],
+          correctAnswer: 1,
+          explanation: 'filter() crée un nouveau tableau avec les éléments qui passent le test.'
+        },
+        {
+          id: 2,
+          type: 'boolean',
+          question: 'Le html est un langage synchrone par défaut?',
+          options: ['Vrai','Faux'],
+          correctAnswer: false,
+          explanation: 'html est single-threaded mais asynchrone.'
+        },
+        {
+          id: 3,
+          type: 'text',
+          question: 'Quelle méthode permet d\'ajouter un élément à la fin d\'un tableau?',
+          correctAnswer: ['push', 'push()', '.push', '.push()'],
+          explanation: 'La méthode push() ajoute un ou plusieurs éléments à la fin d\'un tableau.'
+        },
+        {
+            id: 4,
+            type: 'boolean',
+            question: 'Le html est un langage synchrone par défaut?',
+            options: ['Vrai','Faux'],
+            correctAnswer: false,
+            explanation: 'html est single-threaded mais asynchrone.'
+          },
+          {
+            id: 5,
+            type: 'text',
+            question: 'Quelle méthode permet d\'ajouter un élément à la fin d\'un tableau?',
+            correctAnswer: ['push', 'push()', '.push', '.push()'],
+            explanation: 'La méthode push() ajoute un ou plusieurs éléments à la fin d\'un tableau.'
+          },
+          {
+              id: 6,        
+              type: 'boolean',
+              question: 'Le html est un langage synchrone par défaut?',
+              options: ['Vrai','Faux'],
+              correctAnswer: false,
+              explanation: 'html est single-threaded mais asynchrone.'
+            }
+    ] 
+
+}
+
+
+
+
+
 
 
 const category = [
