@@ -1,15 +1,17 @@
 let savedValue = localStorage.getItem("clickedCard").toLocaleLowerCase();
 let nextBtn = document.getElementById("nextBtn");
 let modal = document.getElementById("modal");
-
-
+let score = document.getElementById("score");
+let counter = 0;
 let valueSelected = QuizData[savedValue];
+let resultQuize = document.getElementById("resultQuize");
 
 Quizze(valueSelected);
 
 function Quizze(value){
 
   let textType = true;
+  resultQuize.style.display = "none";
   // Response data-----------------------------------------------------------
 let res = (id , reponse) => {
   let div = `<label class="z-50 btn">
@@ -34,11 +36,112 @@ value.forEach(question => {
 
 })
 
+// Templates --------------------------------------------------------------
+
+function multiOption(question , rep1 , rep2 , rep3 , rep4  , correct , color , selected = null){
+
+  
+  if(selected != null){
+    console.log(selected);
+    let div = `<div class="bg-[#161e6bbc] flex flex-col gap-6 border-2 border-red-500 text-white max-sm:px-8 px-12 py-8 w-8/12 rounded">
+    <h2 class="text-2xl font-bold"> ${question}</h2>
+    <div class="font-[sans-serif] space-y-6">
+
+      <div class=" ${(correct == rep1) ? "bg-" + color + "-500 " + "text-white" : (selected == rep1) ? 'bg-red-500 text-white' : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+        <span class="block text-sm sm:inline max-sm:mt-2">${rep1}</span>
+      </div>
+
+      <div class=" ${(correct == rep2) ? "bg-" + color + "-500 " + "text-white" : (selected == rep2) ? 'bg-red-500 text-white' : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+        <span class="block text-sm sm:inline max-sm:mt-2">${rep2}</span>
+      </div>
+
+      <div class="${rep3 == undefined ? 'hidden' : ''} ${(correct == rep3) ? "bg-" + color + "-500 " + "text-white" : (selected == rep3) ? 'bg-red-500 text-white' : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+        <span class="block text-sm sm:inline max-sm:mt-2">${rep3}</span>
+      </div>
+
+      <div class="${rep4 == undefined ? 'hidden' : ''} ${(correct == rep4) ? "bg-" + color + "-500 " + "text-white" : (selected == rep4) ? 'bg-red-500 text-white' : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+        <span class="block text-sm sm:inline max-sm:mt-2">${rep4}</span>
+      </div>
+
+    </div>
+  </div>`
+
+  return div
+
+
+  }else{
+    let div = `<div class="bg-[#161e6bbc] flex flex-col gap-6 border-2 border-${color}-500 text-white max-sm:px-8 px-12 py-8 w-8/12 rounded">
+          <h2 class="text-2xl font-bold">${question}</h2>
+          <div class="font-[sans-serif] space-y-6">
+
+            <div class="${correct == rep1 ? "bg-" + color + "-500 " + "text-white" : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+              <span class="block text-sm sm:inline max-sm:mt-2">${rep1}</span>
+            </div>
+      
+            <div class="${correct == rep2 ? "bg-" + color + "-500 " + "text-white" : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+              <span class="block text-sm sm:inline max-sm:mt-2">${rep2}</span>
+            </div>
+
+            <div class="${rep3 == undefined ? 'hidden' : ''} ${correct == rep3 ? "bg-" + color + "-500 " + "text-white" : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+              <span class="block text-sm sm:inline max-sm:mt-2">${rep3}</span>
+            </div>
+      
+            <div class="${rep4 == undefined ? 'hidden' : ''} ${correct == rep4 ? "bg-" + color + "-500 " + "text-white" : 'bg-gray-100 text-black'} p-4 rounded-lg" >
+              <span class="block text-sm sm:inline max-sm:mt-2">${rep4}</span>
+            </div>
+          </div>
+        </div>`
+
+        return div
+  }
+
+}
+
+function inputTextCorrect(question , rep1){
+
+    let div = `<div class="bg-[#161e6bbc] flex flex-col gap-6 border-2 border-green-500 text-white max-sm:px-8 px-12 py-8 w-8/12 rounded">
+    <h2 class="text-2xl font-bold">${question}</h2>
+    <div class="font-[sans-serif] space-y-6">
+
+      <div class="bg-green-500 text-white p-4 rounded-lg" >
+        <span class="block text-sm sm:inline max-sm:mt-2">${rep1}</span>
+      </div>
+    
+    </div>
+  </div>`
+
+  return div
+}
+
+function inputTextInCorrect(question , rep1 , correct){
+
+    let div = `<div class="bg-[#161e6bbc] flex flex-col gap-6 border-2 border-red-500 text-white max-sm:px-8 px-12 py-8 w-8/12 rounded">
+    <h2 class="text-2xl font-bold">${question}</h2>
+    <div class="font-[sans-serif] space-y-6">
+
+      <div class="bg-green-500 text-white p-4 rounded-lg">
+        <span class="block text-sm sm:inline max-sm:mt-2">${correct}</span>
+      </div>
+    
+      <div class="bg-red-500 text-white p-4 rounded-lg" >
+        <span class="block text-sm sm:inline max-sm:mt-2">${rep1}</span>
+      </div>
+    
+    </div>
+  </div>`
+
+  return div
+}
+
 
 // Radio response button -------------------------------------------------
 
 window.selectResponse = function (selectedId , id) {
   nextBtn.style.visibility = "visible";
+
+  if(currentTab == value.length - 1){
+    resultQuize.style.display = "flex";
+  }
 
   if(--id == value[currentTab].correctAnswer){
   
@@ -56,6 +159,25 @@ window.selectResponse = function (selectedId , id) {
     responseInput.forEach(input => {
       input.disabled = true;
     });
+
+    counter += 100;
+
+    score.innerHTML = counter;
+
+    let queestion = value[currentTab].question;
+    let rep1 = value[currentTab].options[0];
+    let rep2 = value[currentTab].options[1];
+    let rep3 = value[currentTab].options[2];
+    let rep4 = value[currentTab].options[3];
+    let correct = value[currentTab].options[id];
+    let color = 'green';
+
+    let div = multiOption(queestion , rep1 , rep2 , rep3 , rep4 , correct , color);
+
+    resultQuize.innerHTML += div;
+
+    //console.log(div);
+
   
   } else {
     let responseInput = document.querySelectorAll(".responseInput");
@@ -70,6 +192,21 @@ window.selectResponse = function (selectedId , id) {
   
   document.getElementById(selectedId).classList.remove('bg-gray-200');
   document.getElementById(selectedId).classList.add('bg-red-500', 'text-white');
+
+
+  let queestion = value[currentTab].question;
+    let rep1 = value[currentTab].options[0];
+    let rep2 = value[currentTab].options[1];
+    let rep3 = value[currentTab].options[2];
+    let rep4 = value[currentTab].options[3];
+    let selected = value[currentTab].options[id];
+    let a = value[currentTab].correctAnswer; 
+    let correct = value[currentTab].options[a];
+    let color = 'green';
+
+    let div = multiOption(queestion , rep1 , rep2 , rep3 , rep4 , correct , color , selected);
+    resultQuize.innerHTML += div;
+    //console.log(div);
 
 
 
@@ -122,6 +259,18 @@ window.textInput = function (){
     textBtn.disabled = true;
     selectInput.style.backgroundColor = "green";
     textBtn.style.backgroundColor = "green";
+    counter += 100;
+    score.innerHTML = counter;
+
+    let queestion = value[currentTab].question;
+
+    let div = inputTextCorrect(queestion , result);
+
+    resultQuize.innerHTML += div;
+
+    //let div = inputTextCorrect()
+
+
 
   }else{
     selectInput.disabled = true;
@@ -154,6 +303,14 @@ window.textInput = function (){
             modal.style.display = "none";
         }
     };
+
+
+    let correct = value[currentTab].correctAnswer[0];
+    let queestion = value[currentTab].question;
+
+    let div = inputTextInCorrect(queestion , result , correct);
+
+    resultQuize.innerHTML += div;
 
   // end modal ----------------------------------------------
   // end modal ----------------------------------------------
@@ -237,6 +394,8 @@ let progress = document.getElementById("progress");
 var test = 100 / value.length;
 var width = test;
 progress.style.width = width + "%"
+
+
 window.nextPrev = function (n) {
 
  var x = document.getElementsByClassName("tab");
@@ -248,6 +407,7 @@ window.nextPrev = function (n) {
    x[currentTab].style.display = "none";
    
    currentTab = currentTab + n;
+
    showTab(currentTab); 
  }else if(n == -1 && currentTab > 0){
    width = width - test;
@@ -260,9 +420,8 @@ window.nextPrev = function (n) {
  } 
 
 
- // if(currentTab >= value.length){
- //   window.location.href = "www.google.com";
- // }
+ 
+ 
  
 }
   
