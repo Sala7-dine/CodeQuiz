@@ -1,6 +1,6 @@
 let savedValue = localStorage.getItem("clickedCard").toLocaleLowerCase();
 let nextBtn = document.getElementById("nextBtn");
-
+let modal = document.getElementById("modal");
 
 
 let valueSelected = QuizData[savedValue];
@@ -70,6 +70,37 @@ window.selectResponse = function (selectedId , id) {
   
   document.getElementById(selectedId).classList.remove('bg-gray-200');
   document.getElementById(selectedId).classList.add('bg-red-500', 'text-white');
+
+
+
+
+  // modal ----------------------------------------
+  // modal ----------------------------------------
+
+  let explication = document.getElementById("explication");
+  explication.innerHTML = value[currentTab].explanation;
+
+    setTimeout(function () {
+      modal.style.display = "flex";
+    }, 600);
+
+    setTimeout(function () {
+        modal.style.display = "none";
+    }, 10000);
+  
+    document.querySelector(".close").onclick = function () {
+        document.getElementById("modal").style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        let modal = document.getElementById("modal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+  // end modal ----------------------------------------------
+  // end modal ----------------------------------------------
   
   }
 
@@ -87,7 +118,6 @@ window.textInput = function (){
   let result = selectInput.value;  
   
   if(value[currentTab].correctAnswer.includes(result)){
-    console.log(true);
     selectInput.disabled = true;
     textBtn.disabled = true;
     selectInput.style.backgroundColor = "green";
@@ -98,7 +128,35 @@ window.textInput = function (){
     textBtn.disabled = true;
     selectInput.style.backgroundColor = "red";
     textBtn.style.backgroundColor = "red";
-    console.log('tota');
+
+
+  // modal ----------------------------------------
+  // modal ----------------------------------------
+
+  let explication = document.getElementById("explication");
+  explication.innerHTML = value[currentTab].explanation;
+
+    setTimeout(function () {
+      modal.style.display = "flex";
+    }, 600);
+
+    setTimeout(function () {
+        modal.style.display = "none";
+    }, 10000);
+  
+    document.querySelector(".close").onclick = function () {
+        document.getElementById("modal").style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        let modal = document.getElementById("modal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+  // end modal ----------------------------------------------
+  // end modal ----------------------------------------------
   }
 
  
