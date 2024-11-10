@@ -4,16 +4,22 @@ let modal = document.getElementById("modal");
 let score = document.getElementById("score");
 let counter = 0;
 let valueSelected = QuizData[savedValue];
+
 let resultQuize = document.getElementById("resultQuize");
+
+
+
+let NumberOfCorrectAnswers = 0;
+let NumberOfInCorrectAnswers = 0;
 
 Quizze(valueSelected);
 
 function Quizze(value){
 
-  let textType = true;
   resultQuize.style.display = "none";
   // Response data-----------------------------------------------------------
 let res = (id , reponse) => {
+  
   let div = `<label class="z-50 btn">
            <input type="radio" name="reponse" class="hidden responseInput" onclick="selectResponse('response${id}' , ${id})" />
            <div id="response${id}" class="px-8 py-4  rounded-lg cursor-pointer bg-gray-200">
@@ -141,6 +147,14 @@ window.selectResponse = function (selectedId , id) {
 
   if(currentTab == value.length - 1){
     resultQuize.style.display = "flex";
+
+    setTimeout(function () {
+      scrollTo({
+        top: 800, 
+        left: 0,  
+        behavior: 'smooth' 
+      });
+    }, 1500);
   }
 
   if(--id == value[currentTab].correctAnswer){
@@ -161,8 +175,9 @@ window.selectResponse = function (selectedId , id) {
     });
 
     counter += 100;
-
     score.innerHTML = counter;
+
+    NumberOfCorrectAnswers += 1;
 
     let queestion = value[currentTab].question;
     let rep1 = value[currentTab].options[0];
@@ -176,8 +191,6 @@ window.selectResponse = function (selectedId , id) {
 
     resultQuize.innerHTML += div;
 
-    //console.log(div);
-
   
   } else {
     let responseInput = document.querySelectorAll(".responseInput");
@@ -189,10 +202,11 @@ window.selectResponse = function (selectedId , id) {
     responseInput.forEach(input => {
       input.disabled = true;
     })
+
+    NumberOfInCorrectAnswers += 1;
   
   document.getElementById(selectedId).classList.remove('bg-gray-200');
   document.getElementById(selectedId).classList.add('bg-red-500', 'text-white');
-
 
   let queestion = value[currentTab].question;
     let rep1 = value[currentTab].options[0];
@@ -206,9 +220,6 @@ window.selectResponse = function (selectedId , id) {
 
     let div = multiOption(queestion , rep1 , rep2 , rep3 , rep4 , correct , color , selected);
     resultQuize.innerHTML += div;
-    //console.log(div);
-
-
 
 
   // modal ----------------------------------------
@@ -219,7 +230,7 @@ window.selectResponse = function (selectedId , id) {
 
     setTimeout(function () {
       modal.style.display = "flex";
-    }, 600);
+    }, 400);
 
     setTimeout(function () {
         modal.style.display = "none";
@@ -241,6 +252,26 @@ window.selectResponse = function (selectedId , id) {
   
   }
 
+
+
+  let titleQuize = document.getElementById("titleQuize");
+let scoreQuiz = document.getElementById("scoreQuiz");
+let percentageQuize = document.getElementById("percentageQuize");
+let correctQuiz = document.getElementById("correctQuiz");
+let incorrectQuiz = document.getElementById("incorrectQuiz");
+
+  // console.log("title : ",savedValue); // title
+  // console.log("score : ", counter); // score
+  // console.log("correct answer : ", NumberOfCorrectAnswers); // correct answer
+  // console.log("in correct answer : ", NumberOfInCorrectAnswers); // incorrect answer
+  // console.log("total question :  " , value.length);
+
+  let accuracy = Math.floor((NumberOfCorrectAnswers/value.length) * 100);
+  titleQuize.innerHTML = savedValue;
+  scoreQuiz.innerHTML = counter;
+  percentageQuize.innerHTML = accuracy;
+  correctQuiz.innerHTML = NumberOfCorrectAnswers;
+  incorrectQuiz.innerHTML = NumberOfInCorrectAnswers; 
 }
 
 // Radio response button -------------------------------------------------
@@ -253,7 +284,7 @@ window.textInput = function (){
   let textBtn = document.getElementById("textBtn");
 
   let result = selectInput.value;  
-  
+ 
   if(value[currentTab].correctAnswer.includes(result)){
     selectInput.disabled = true;
     textBtn.disabled = true;
@@ -264,13 +295,11 @@ window.textInput = function (){
 
     let queestion = value[currentTab].question;
 
+    NumberOfCorrectAnswers += 1;
+
     let div = inputTextCorrect(queestion , result);
 
     resultQuize.innerHTML += div;
-
-    //let div = inputTextCorrect()
-
-
 
   }else{
     selectInput.disabled = true;
@@ -278,8 +307,9 @@ window.textInput = function (){
     selectInput.style.backgroundColor = "red";
     textBtn.style.backgroundColor = "red";
 
+    NumberOfInCorrectAnswers += 1;
 
-  // modal ----------------------------------------
+
   // modal ----------------------------------------
 
   let explication = document.getElementById("explication");
@@ -287,7 +317,7 @@ window.textInput = function (){
 
     setTimeout(function () {
       modal.style.display = "flex";
-    }, 600);
+    }, 400);
 
     setTimeout(function () {
         modal.style.display = "none";
@@ -313,7 +343,42 @@ window.textInput = function (){
     resultQuize.innerHTML += div;
 
   // end modal ----------------------------------------------
-  // end modal ----------------------------------------------
+  }
+
+
+  if(currentTab == value.length - 1){
+    resultQuize.style.display = "flex";
+
+    setTimeout(function () {
+      scrollTo({
+        top: 800, 
+        left: 0,  
+        behavior: 'smooth' 
+      });
+    }, 1500);
+
+
+
+
+
+    let titleQuize = document.getElementById("titleQuize");
+    let scoreQuiz = document.getElementById("scoreQuiz");
+    let percentageQuize = document.getElementById("percentageQuize");
+    let correctQuiz = document.getElementById("correctQuiz");
+    let incorrectQuiz = document.getElementById("incorrectQuiz");
+    
+      // console.log("title : ",savedValue); // title
+      // console.log("score : ", counter); // score
+      // console.log("correct answer : ", NumberOfCorrectAnswers); // correct answer
+      // console.log("in correct answer : ", NumberOfInCorrectAnswers); // incorrect answer
+      // console.log("total question :  " , value.length);
+    
+      let accuracy = Math.floor((NumberOfCorrectAnswers/value.length) * 100);
+      titleQuize.innerHTML = savedValue;
+      scoreQuiz.innerHTML = counter;
+      percentageQuize.innerHTML = accuracy;
+      correctQuiz.innerHTML = NumberOfCorrectAnswers;
+      incorrectQuiz.innerHTML = NumberOfInCorrectAnswers; 
   }
 
  
@@ -321,7 +386,6 @@ window.textInput = function (){
 
 
 // Timer -------------------------------------------------------------
-
 
 let timeLeft = 300; 
 const timerInterval = setInterval(() => {
@@ -338,7 +402,6 @@ const timerInterval = setInterval(() => {
 
 
 // Applt multiple step ---------------------------------------------------
-
 
 var currentTab = 0; 
 showTab(currentTab);
@@ -361,20 +424,14 @@ function showTab(n) {
  Parentrsp.innerHTML = "";
  
  if("options" in value[currentTab]){
- 
-  textType = true; 
    let taille = value[currentTab].options.length;
    for(let i=0; i< taille ; i++){
-       let response = res(i+1 , value[currentTab].options[i]);   
-     //console.log(response);
+      let response = res(i+1 , value[currentTab].options[i]);
 
      Parentrsp.innerHTML += response;
    } 
  }else{
 
-   //console.log(Parentrsp);
-   
-   textType = false;
    Parentrsp.innerHTML = `<div class="font-[sans-serif] max-w-md mx-auto">
   <input type="text" placeholder="Saisir votre reponse..." id="selectInput"
     class="px-4 py-3 bg-gray-100 w-full text-sm outline-none border-b-2 border-blue-500 rounded" />
@@ -388,7 +445,6 @@ function showTab(n) {
 
 
 }
-
 
 let progress = document.getElementById("progress");
 var test = 100 / value.length;
@@ -418,13 +474,8 @@ window.nextPrev = function (n) {
    currentTab = currentTab + n;
    showTab(currentTab); 
  } 
-
-
- 
- 
- 
 }
+
+
   
 }
-
-Quizze(valueSelected);

@@ -89,12 +89,46 @@
     </section>
 
     <!-- Resultat de Quizze -->
-    <section class="w-full p-36 min-h-screen flex flex-col gap-5 items-center justify-center bg-[#090E34]" id="resultQuize">
+    <section class="w-full p-36 min-h-screen flex flex-col gap-8 items-center justify-center bg-[#090E34]" id="resultQuize">
+      
+      <h1 class="text-white text-[35px] font-extrabold">Quiz Summary</h1>
+      <div class="bg-[#161e6bbc] w-8/12 py-12 flex flex-col justify-center items-center gap-6">
 
-    
+        <p id="titleQuize" class="text-white text-[30px] font-bold underline">Javascript</p>
+        <div class="flex justify-between text-white text-[18px] font-semibold w-5/12">
+          <h3> <span><img src="../images/rank.svg" alt="" class="w-4 inline"></span>   Rank : 250</h3>
+          <h3> <img src="../images/points.svg" alt="" class="w-4 inline"> Score : <span id="scoreQuiz"></span>pts</h3>
+        </div> 
+        <div class="w-5/12 h-2 bg-gray rounded">
+            <div class="w-full text-[14px] font-medium bg-blue-600 rounded-full text-center text-white">
+              Accuracy : <span id="percentageQuize"></span> %
+            </div>
+        </div>
+  
+        <div class="flex justify-between text-white text-[18px] font-semibold w-5/12">
+          <p class="text-green-500" > Correct : <span id="correctQuiz"></span></p>
+          <p class="text-red-500" >Incorrect : <span id="incorrectQuiz"></span></p>
+        </div>
+        
+        
+      </div>
 
+      <div class="font-[sans-serif] flex justify-between gap-4">
 
+        <button type="button" onclick="location.reload()"
+          class="px-8 py-2.5 flex items-center justify-center rounded text-white text-sm tracking-wider font-medium border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+          Replay
+          
+        </button>
+        <button type="button" onclick="location.href = 'index.html'"
+          class="px-8 py-2.5 flex items-center justify-center rounded text-white text-sm tracking-wider font-medium border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+          Home
+         
+        </button>
+      </div>
 
+      <h1 class="text-white text-[40px] font-extrabold mt-16">Question Performance</h1>
+     
 
 
 
