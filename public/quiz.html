@@ -11,6 +11,9 @@
 </head>
 <body>
 
+<!-- 
+  <div id="countdown" class="text-5xl text-center mt-44 text-[#333]">3</div> -->
+
     <div>
         <img class="absolute right-0 top-0 z-0" src="../images/Group 1.svg" alt="">
       </div>
@@ -134,8 +137,24 @@
 
     </section>
     
-    
-
+<!--     
+    <script>
+      // Set initial countdown number
+      let countdownNumber = 3;
+  
+      // Update countdown every second
+      const countdownInterval = setInterval(() => {
+        countdownNumber--; // Decrease number
+        document.getElementById("countdown").textContent = countdownNumber;
+  
+        // If countdown reaches zero, show page content
+        if (countdownNumber <= 0) {
+          clearInterval(countdownInterval); // Stop countdown
+          document.getElementById("countdown").style.display = "none"; // Hide countdown
+          document.getElementById("pageContent").style.display = "block"; // Show page content
+        }
+      }, 1000); // 1000ms = 1 second
+    </script> -->
   
 <script src="data.js"></script>
 <script src="quiz.js"></script>

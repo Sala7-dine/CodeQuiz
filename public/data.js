@@ -174,11 +174,6 @@ const QuizData = {
 };
 
 
-
-
-
-
-
 const category = [
     {
         id: 1,
@@ -325,3 +320,5 @@ const category = [
         time: 4
     }
 ];
+
+

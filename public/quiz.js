@@ -74,7 +74,6 @@ function multiOption(question , rep1 , rep2 , rep3 , rep4  , correct , color , s
 
   return div
 
-
   }else{
     let div = `<div class="bg-[#161e6bbc] flex flex-col gap-6 border-2 border-${color}-500 text-white max-sm:px-8 px-12 py-8 w-8/12 rounded">
           <h2 class="text-2xl font-bold">${question}</h2>
@@ -479,3 +478,4 @@ window.nextPrev = function (n) {
 
   
 }
+

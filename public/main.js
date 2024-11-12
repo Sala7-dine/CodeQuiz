@@ -1,9 +1,12 @@
-
-// Toggle ----------------------------------------------------------------
-
 let toggleOpen = document.getElementById('toggleOpen');
 let toggleClose = document.getElementById('toggleClose');
 let collapseMenu = document.getElementById('collapseMenu');
+let modalQuizze = document.querySelector(".modalQuizze");
+let submitBtn = document.getElementById("submitBtn");
+let inputQuiz = document.getElementById("inputQuiz");
+let close1 = document.querySelector(".close");
+let clickedCard = "";
+// Toggle ----------------------------------------------------------------
 
 function handleClick() {
 if (collapseMenu.style.display === 'block') {
@@ -65,12 +68,31 @@ let btnValue = document.querySelectorAll(".btnValue");
 btnValue.forEach(btn =>
 
     btn.addEventListener("click" ,(e)=>{
-        let clickedCard = e.target.value;
-        localStorage.setItem("clickedCard" , clickedCard);
-        window.location.href = "quiz.html"
-        console.log(clickedCard);
+      clickedCard = e.target.value;
+      modalQuizze.style.display = "flex";
+        
     })
-)
+);
+
+submitBtn.addEventListener("click" , ()=> {
+
+  let username = inputQuiz.value;
+  localStorage.setItem("clickedCard" , clickedCard);
+  localStorage.setItem("username" , username);
+  inputQuiz.innerHTML = "";
+  window.location.href = "quiz.html";
+  modalQuizze.style.display = "none";
+
+})
+
+
+close1.addEventListener("click" , ()=> {
+  
+  modalQuizze.style.display = "none";
+
+})
+
+
 
 
 

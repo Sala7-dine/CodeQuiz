@@ -14,6 +14,9 @@ module.exports = {
 
       borderRadius: {
         'reduis': '20px'
+      },
+      backdropBlur : {
+        "ssm" : "1px"
       }
     },
   },
