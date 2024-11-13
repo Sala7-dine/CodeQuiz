@@ -6,6 +6,11 @@ let submitBtn = document.getElementById("submitBtn");
 let inputQuiz = document.getElementById("inputQuiz");
 let close1 = document.querySelector(".close");
 let clickedCard = "";
+
+
+
+let category = JSON.parse(localStorage.category); 
+
 // Toggle ----------------------------------------------------------------
 
 function handleClick() {

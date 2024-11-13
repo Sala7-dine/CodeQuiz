@@ -18,7 +18,7 @@
           </div>
   
           <div class="text-center mt-4">
-            <p class="text-base text-white">Salahdine   </p>
+            <p class="text-base text-white">Salahdine</p>
             <p class="text-xs text-blue-300 mt-0.5">salahdine23@gmail.com</p>
           </div>
         </div>
@@ -41,18 +41,6 @@
           <li>
             <a href="javascript:void(0)"
               class="text-white hover:text-white text-sm flex items-center hover:bg-blue-900 rounded px-4 py-3 transition-all">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4"
-                viewBox="0 0 512 512">
-                <path
-                  d="M437.02 74.98C388.668 26.63 324.379 0 256 0S123.332 26.629 74.98 74.98C26.63 123.332 0 187.621 0 256s26.629 132.668 74.98 181.02C123.332 485.37 187.621 512 256 512s132.668-26.629 181.02-74.98C485.37 388.668 512 324.379 512 256s-26.629-132.668-74.98-181.02zM111.105 429.297c8.454-72.735 70.989-128.89 144.895-128.89 38.96 0 75.598 15.179 103.156 42.734 23.281 23.285 37.965 53.687 41.742 86.152C361.641 462.172 311.094 482 256 482s-105.637-19.824-144.895-52.703zM256 269.507c-42.871 0-77.754-34.882-77.754-77.753C178.246 148.879 213.13 114 256 114s77.754 34.879 77.754 77.754c0 42.871-34.883 77.754-77.754 77.754zm170.719 134.427a175.9 175.9 0 0 0-46.352-82.004c-18.437-18.438-40.25-32.27-64.039-40.938 28.598-19.394 47.426-52.16 47.426-89.238C363.754 132.34 315.414 84 256 84s-107.754 48.34-107.754 107.754c0 37.098 18.844 69.875 47.465 89.266-21.887 7.976-42.14 20.308-59.566 36.542-25.235 23.5-42.758 53.465-50.883 86.348C50.852 364.242 30 312.512 30 256 30 131.383 131.383 30 256 30s226 101.383 226 226c0 56.523-20.86 108.266-55.281 147.934zm0 0"
-                  data-original="#000000" />
-              </svg>
-              <span>Audience</span>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)"
-              class="text-white hover:text-white text-sm flex items-center hover:bg-blue-900 rounded px-4 py-3 transition-all">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-[18px] h-[18px] mr-4" viewBox="0 0 24 24">
                 <path
                   d="M18 2c2.206 0 4 1.794 4 4v12c0 2.206-1.794 4-4 4H6c-2.206 0-4-1.794-4-4V6c0-2.206 1.794-4 4-4zm0-2H6a6 6 0 0 0-6 6v12a6 6 0 0 0 6 6h12a6 6 0 0 0 6-6V6a6 6 0 0 0-6-6z"
@@ -60,7 +48,15 @@
                 <path d="M12 18a1 1 0 0 1-1-1V7a1 1 0 0 1 2 0v10a1 1 0 0 1-1 1z" data-original="#000000" />
                 <path d="M6 12a1 1 0 0 1 1-1h10a1 1 0 0 1 0 2H7a1 1 0 0 1-1-1z" data-original="#000000" />
               </svg>
-              <span>Posts</span>
+
+              <span>Quizzes</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)"
+              class="text-white hover:text-white text-sm flex items-center hover:bg-blue-900 rounded px-4 py-3 transition-all">
+              <svg class="w-[23px] h-[23px] mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 14.0709C11.6734 14.0242 11.3395 14 11 14C7.13401 14 4 17.134 4 21H14M17.997 18C18.997 17 19.997 16.6046 19.997 15.5C19.997 14.3954 19.1016 13.5 17.997 13.5C17.0651 13.5 16.282 14.1374 16.06 15M17.997 21H18.007M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+              <span>Questions</span>
             </a>
           </li>
           <li>
@@ -145,7 +141,6 @@
     </nav>
 
     <section class="px-12 py-12 w-full flex flex-col">
-      
       
       <!-------------------------------------------- Dashboard ------------------------------------------------------>
       
@@ -504,46 +499,384 @@
 
       </div>
 
-      <!-------------------------------------------- Quizzes ------------------------------------------------------>
-      <div class="quizzes">
+      <!--------------------------------------------- Quizzes ------------------------------------------------------->
+
+      <div class="hidden quizzes">
 
         <div class="w-full flex justify-between px-2">
           
           <h1 class="text-white text-4xl font-extrabold">Quizzes</h1>
-          
-          <div class="bg-[#090E34] flex px-12 py-3 border-b border-blue-400 focus-within:border-blue-500 overflow-hidden max-w-xl font-[sans-serif]">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="18px" class="fill-blue-400 mr-3">
-                <path
-                  d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
-                </path>
-              </svg>
-              <input type="email" placeholder="Search Something..." class="w-full outline-none text-sm bg-[#090E34] text-white" />
-            </div>
 
         </div>
+        
+          <div class="flex justify-between py-10 px-1">
 
+            <h1 class="text-white text-3xl font-bold">All Quizzes</h1>
+
+            <div class="flex gap-4"> 
+   
+             <div class="relative font-[sans-serif] w-max">
+                <button type="button" id="dropdownToggle"
+                  class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+                  Filter Score
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                      d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                      clip-rule="evenodd" data-original="#000000" />
+                  </svg>
+                </button>
+          
+                <ul id="dropdownMenu" class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+                  <li class='py-2.5 px-5 hover:bg-blue-50 text-white text-sm cursor-pointer'>Facile</li>
+                  <li class='py-2.5 px-5 hover:bg-blue-50 text-white text-sm cursor-pointer'>Moyenne</li>
+                  <li class='py-2.5 px-5 hover:bg-blue-50 text-white text-sm cursor-pointer'>Difficile</li>
+                </ul>
+              </div>
+             <div class="relative font-[sans-serif] w-max">
+                <button type="button" id="dropdownToggle"
+                  class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+                  Filter Quiz
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                      d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                      clip-rule="evenodd" data-original="#000000" />
+                  </svg>
+                </button>
+          
+              </div>
+
+
+              <div class="font-[sans-serif] w-max">
+                <button type="button" id="ajoutBtn"
+                  class="flex justify-center items-center gap-2 px-5 py-2.5 rounded text-white text-sm font-medium border-none outline-none bg-green-600 hover:bg-green-700 active:bg-green-600">
+                  <span>Ajouter Quiz</span>  
+                  <i class="fa fa-plus" style="font-size:16px"></i>
+                </button>
+              </div>
+  
+            </div>
+
+
+            <!-- Modal Ajouter Quizze -->
+
+            <div id="ajoutModalQuiz"
+            class="fixed inset-0 p-4 hidden flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+            <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8 relative">
+                <div class="flex items-center">
+                    <h3 class="text-blue-600 text-3xl font-bold flex-1 text-center w-full">Ajouter Quizze</h3>
+
+                    <div id="close1"> 
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 ml-2 cursor-pointer shrink-0 fill-gray-400 hover:fill-red-500"
+                      viewBox="0 0 320.591 320.591">
+                      <path
+                          d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                          data-original="#000000"></path>
+                      <path
+                          d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                          data-original="#000000"></path>
+                      </svg>
+                    </div>
+                    
+                </div>
+
+                <form class="space-y-4 mt-8">
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Titre de Quizze</labe>
+                        <input type="text" placeholder="Saisir le titre..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="titreQuiz" />
+                    </div>
+
+
+                    <div>
+                      <labe class="text-gray-800 text-sm mb-2 block">Niveux</labe>
+                      <input type="text" placeholder="Saise le niveux"
+                          class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="nvQuiz" />
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Descriptions</labe>
+                        <textarea placeholder='Saisir la description...'
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="descriptionQuiz" rows="3"></textarea>
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">N° de Questions</labe>
+                        <input type="number" placeholder="Saisie le nombre..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="nbrQuiz" />
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Temp de Quizze</labe>
+                        <input type="number" placeholder="Time..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="timeQuiz" />
+                    </div>
+
+
+                    
+                    <div class="flex justify-end gap-4 !mt-8">
+                        <button type="button"
+                            class="px-6 py-3 rounded-lg text-gray-800 text-sm border-none outline-none tracking-wide bg-gray-200 hover:bg-gray-300">Cancel</button>
+                        <button type="button" id="ajoutQuizBtn"
+                            class="px-6 py-3 rounded-lg text-white text-sm border-none outline-none tracking-wide bg-blue-600 hover:bg-blue-700">Ajouter</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+            <!-- Fin Ajout Quiz -->
+           
+
+          </div>
+
+          <!-- Tablaux de quiz -->
+          <div class="overflow-x-auto font-[sans-serif]">
+            <table class="min-w-full bg-[#0f154f]">
+              <thead class="whitespace-nowrap bg-[#05071b] rounded ">
+                <tr>
+                  <th class="p-4 text-left text-sm font-semibold text-white ">
+                    id
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white ">
+                    Titre
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Niveux
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Time
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    N° Question
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Description
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+      
+              <tbody class="whitespace-nowrap divide-y divide-gray-700" id="quiztable">
+           
+          
+                
+
+              </tbody>
+            </table>
+    
+          </div>
+      </div>
+
+      <!--------------------------------------------- Questions ------------------------------------------------------->
+
+      <div class=" questions">
+        
+        <div class="w-full flex justify-between px-2">
+          
+          <h1 class="text-white text-4xl font-extrabold">Questions</h1>
+
+        </div>
+        
+          <div class="flex justify-between py-10 px-1">
+
+            <h1 class="text-white text-3xl font-bold">All Questions</h1>
+
+            <div class="flex gap-4"> 
+   
+             <div class="relative font-[sans-serif] w-max">
+                <button type="button" id="dropdownToggle"
+                  class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+                  Filter Score
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                      d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                      clip-rule="evenodd" data-original="#000000" />
+                  </svg>
+                </button>
+          
+                <ul id="dropdownMenu" class='absolute hidden shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+                  <li class='py-2.5 px-5 hover:bg-blue-50 text-white text-sm cursor-pointer'>Facile</li>
+                  <li class='py-2.5 px-5 hover:bg-blue-50 text-white text-sm cursor-pointer'>Moyenne</li>
+                  <li class='py-2.5 px-5 hover:bg-blue-50 text-white text-sm cursor-pointer'>Difficile</li>
+                </ul>
+              </div>
+             <div class="relative font-[sans-serif] w-max">
+                <button type="button" id="dropdownToggle"
+                  class="px-5 py-2.5 rounded text-white text-sm font-semibold border-none outline-none bg-blue-600 hover:bg-blue-700 active:bg-blue-600">
+                  Filter Quiz
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-white inline ml-3" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd"
+                      d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z"
+                      clip-rule="evenodd" data-original="#000000" />
+                  </svg>
+                </button>
+          
+              </div>
+
+              <div class="font-[sans-serif] w-max">
+                <button type="button" id="questionBtn"
+                  class="flex justify-center items-center gap-2 px-5 py-2.5 rounded text-white text-sm font-medium border-none outline-none bg-green-600 hover:bg-green-700 active:bg-green-600">
+                  <span>Ajouter Questions</span>  
+                  <i class="fa fa-plus" style="font-size:16px"></i>
+                </button>
+              </div>
+  
+            </div>
+
+            <!-- Modal Ajouter Quizze -->
+
+            <div id="ajoutModalQuestion"
+            class="fixed inset-0 p-4 hidden flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+            <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8 relative">
+                <div class="flex items-center">
+                    <h3 class="text-blue-600 text-3xl font-bold flex-1 text-center w-full">Ajouter Question</h3>
+
+                    <div id="close2"> 
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 ml-2 cursor-pointer shrink-0 fill-gray-400 hover:fill-red-500"
+                      viewBox="0 0 320.591 320.591">
+                      <path
+                          d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                          data-original="#000000"></path>
+                      <path
+                          d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                          data-original="#000000"></path>
+                      </svg>
+                    </div>
+                    
+                </div>
+
+                <form class="space-y-4 mt-8">
+
+                  <div>
+                    <labe class="text-gray-800 text-sm mb-2 block">Type</labe>
+                    <div class="select">
+                      <select class="selectOp" id="selectOptions">
+                        <option value="qcm">Qcm</option>
+                        <option value="boolean">True/False</option>
+                        <option value="text">Text</option>
+                      </select>
+                    </div>
+
+                  </div>
+
+
+                    <div>
+                      <labe class="text-gray-800 text-sm mb-2 block">Question</labe>
+                      <input type="text" placeholder="Saise le niveux"
+                          class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="Ques" />
+                    </div>
+
+
+                    <div id="optionQuestionSection">
+                        <labe class="text-gray-800 text-sm mb-2 block">Options</labe>
+                        <textarea placeholder='Option separer par "," ...'
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="optionQuestion" rows="3"></textarea>
+                    </div>
+
+
+                    <div>
+                      <labe class="text-gray-800 text-sm mb-2 block">La Bonne Reponse</labe>
+                      <div class="select select1" id="bonneReponse">
+                        <select class="selectOp" id="correctAnswerQuestion">
+                          
+                        </select>
+                      </div>
+
+                      <div class="select1" id="textSection">
+
+                      </div>
+  
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Explication</labe>
+                        <input type="text" placeholder="Explication..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="explicationQuestion" />
+                    </div>
+
+                    <div>
+
+                      <labe class="text-gray-800 text-sm mb-2 block">Quizze</labe>
+                      <div class="select">
+                        <select class="selectOp" id="quizzesOptions">
+                          <option value="javascript">javascript</option>
+                          <option value="html">Html</option>
+                          <option value="css">Css</option>
+                        </select>
+                      </div>
+
+                    </div>
+
+
+                    
+                    <div class="flex justify-end gap-4 !mt-8">
+                        <button type="button"
+                            class="px-6 py-3 rounded-lg text-gray-800 text-sm border-none outline-none tracking-wide bg-gray-200 hover:bg-gray-300">Cancel</button>
+                        <button type="button" id="ajoutQuestionBtn"
+                            class="px-6 py-3 rounded-lg text-white text-sm border-none outline-none tracking-wide bg-blue-600 hover:bg-blue-700">Ajouter</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+            <!-- Fin Ajout Quiz -->
+           
+
+          </div>
+
+          <!-- Tablaux de quiz -->
+          <div class="overflow-x-auto font-[sans-serif]">
+            <table class="min-w-full bg-[#0f154f]">
+              <thead class="whitespace-nowrap bg-[#05071b] rounded">
+                <tr>
+                  <th class="p-4 text-left text-sm font-semibold text-white ">
+                    Titre
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white ">
+                    Type
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Question
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Options
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    La bonne reponse
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Explication
+                  </th>
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+      
+              <tbody class="whitespace-nowrap divide-y divide-gray-700" id="questiontable">
+           
+          
+                
+
+              </tbody>
+            </table>
+    
+          </div>
       </div>
 
 
     </section>
 
-    <script>
-      
-      let dropdownToggle = document.getElementById('dropdownToggle');
-      let dropdownMenu = document.getElementById('dropdownMenu');
 
-      function handleClick() {
-          if (dropdownMenu.className.includes('block')) {
-              dropdownMenu.classList.add('hidden')
-              dropdownMenu.classList.remove('block')
-          } else {
-              dropdownMenu.classList.add('block')
-              dropdownMenu.classList.remove('hidden')
-          }
-      }
-
-      dropdownToggle.addEventListener('click', handleClick);
-      
-    </script>
+    <script src="dashboard.js"></script>
 </body>
 </html>

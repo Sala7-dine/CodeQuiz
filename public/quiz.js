@@ -7,8 +7,6 @@ let valueSelected = QuizData[savedValue];
 
 let resultQuize = document.getElementById("resultQuize");
 
-
-
 let NumberOfCorrectAnswers = 0;
 let NumberOfInCorrectAnswers = 0;
 
@@ -403,6 +401,7 @@ const timerInterval = setInterval(() => {
 // Applt multiple step ---------------------------------------------------
 
 var currentTab = 0; 
+
 showTab(currentTab);
 
 function showTab(n) {
