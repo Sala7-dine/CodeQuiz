@@ -16,7 +16,10 @@ let close1 = document.getElementById("close1");
 let ajoutQuizBtn = document.getElementById("ajoutQuizBtn");
 
 
+let QuizData = JSON.parse(localStorage.getItem("QuizData"));
 let category = JSON.parse(localStorage.getItem("category"));
+
+let QuizItems = Object.keys(QuizData); 
 
 
 function getContent(){
@@ -151,8 +154,16 @@ let quizzesOptions = document.getElementById("quizzesOptions");
 let ajoutQuestionBtn = document.getElementById("ajoutQuestionBtn");
 
 
+
 questionBtn.addEventListener("click" , ()=> {
     ajoutModalQuestion.style.display = "flex";
+
+    quizzesOptions.innerHTML = ""
+    category.forEach(element => {
+
+      quizzesOptions.innerHTML += `<option value="${element.titre}">${element.titre}</option>`
+
+  });
 });
 
 close2.addEventListener("click" , ()=> {
@@ -264,15 +275,16 @@ optionQuestion.addEventListener("change" , (e)=>{
 });
 
 function getContentQuestion(){
-    let correctAnswerQuestionn = document.getElementById("correctAnswerQuestionn").value;
-    let type =  selectOptions.value;
-    let question =   Ques.value ;
-    let options =  optionQuestion.value;
-    let correctAnswer =  correctAnswerQuestion.value;
-    let explanation =  explicationQuestion.value;
-    let quiz = quizzesOptions.value;
 
-    if(type === "text"){
+  let type = selectOptions.value;
+  let question = Ques.value ;
+  let options = optionQuestion.value.split(",");
+  let correctAnswer = correctAnswerQuestion.value;
+  let explanation = explicationQuestion.value;
+  let quiz = quizzesOptions.value;
+  
+  if(type === "text"){
+      let correctAnswerQuestionn = document.getElementById("correctAnswerQuestionn").value;
       let obj =  {  
         type: type,
         question: question,
@@ -303,19 +315,41 @@ function getContentQuestion(){
 
 // function handleClickMenu() {
 //     if (Menu.className.includes('block')) {
-//         Menu.classList.add('hidden')
-//         Menu.classList.remove('block')
+//         Menu.classList.add('hidden');
+//         Menu.classList.remove('block');
 //     } else {
-//         Menu.classList.add('block')
-//         Menu.classList.remove('hidden')
+//         Menu.classList.add('block');
+//         Menu.classList.remove('hidden');
 //     }
 // }
 
 // ToggleMenu.addEventListener('click', handleClickMenu);
 
 ajoutQuestionBtn.addEventListener("click" , ()=> {
-  console.log(getContentQuestion());
-  alert("ajouter");
+
+  let obj = getContentQuestion();
+  let title = obj.quiz.toLowerCase();
+
+  if(QuizData[title] == undefined){
+
+      QuizData[title] = [];
+      QuizData[title].push(obj);
+      localStorage.QuizData = JSON.stringify(QuizData);
+      console.log(QuizData); 
+      alert("ajouter");
+
+  }else{
+     QuizData[title].push(obj);
+
+    localStorage.QuizData = JSON.stringify(QuizData);
+
+    console.log(QuizData);
+    alert("ajouter");
+  }
+
+ 
+
+
 })
 
 

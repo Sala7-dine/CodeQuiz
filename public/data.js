@@ -165,6 +165,8 @@ const QuizData = {
           explanation: 'extends est utilisé pour l\'héritage en Java.'
         }
     ]
+  
+    
 };
 
 
@@ -316,4 +318,6 @@ const category = [
 ];
 
 
-localStorage.category = JSON.stringify(category);
+
+//localStorage.QuizData = JSON.stringify(QuizData);
+// localStorage.category = JSON.stringify(category);

@@ -1,3 +1,5 @@
+let QuizData = JSON.parse(localStorage.getItem("QuizData"));
+
 let savedValue = localStorage.getItem("clickedCard").toLocaleLowerCase();
 let nextBtn = document.getElementById("nextBtn");
 let modal = document.getElementById("modal");
@@ -251,7 +253,7 @@ window.selectResponse = function (selectedId , id) {
 
 
 
-  let titleQuize = document.getElementById("titleQuize");
+let titleQuize = document.getElementById("titleQuize");
 let scoreQuiz = document.getElementById("scoreQuiz");
 let percentageQuize = document.getElementById("percentageQuize");
 let correctQuiz = document.getElementById("correctQuiz");
