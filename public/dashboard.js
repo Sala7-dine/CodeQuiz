@@ -1,3 +1,124 @@
+let QuizData = JSON.parse(localStorage.getItem("QuizData"));
+let category = JSON.parse(localStorage.getItem("category"));
+
+let QuizItems = Object.keys(QuizData); 
+
+// Sidebar ------------------------------------------------------------------
+
+let dashboard = document.querySelector(".dashboard");
+let quizzes = document.querySelector(".quizzes");
+let questions = document.querySelector(".questions");
+
+let dashboardSection = document.getElementById("dashboardSection");
+let quizSection = document.getElementById("quizSection");
+let questionSection = document.getElementById("questionSection");
+
+dashboardSection.addEventListener("click" , ()=>{
+
+  dashboard.classList.remove("hidden"); 
+  quizzes.classList.add("hidden");
+  questions.classList.add("hidden");
+
+});
+
+quizSection.addEventListener("click" , ()=>{
+
+  dashboard.classList.add("hidden"); 
+  quizzes.classList.remove("hidden");
+  questions.classList.add("hidden");
+
+});
+
+questionSection.addEventListener("click" , ()=>{
+
+  dashboard.classList.add("hidden"); 
+  quizzes.classList.add("hidden");
+  questions.classList.remove("hidden");
+
+});
+
+/** Display All Questions **/
+
+let questiontable = document.getElementById("questiontable");
+
+function DisplayQuestions(titre, type , ques , options , correctAnswer , exp){
+
+  let tbody = `<tr class="hover:bg-[#253189] w-5/6">
+
+                <!-- titre -->
+                  <td class="p-4 text-sm text-white">
+                    <div class="flex items-center cursor-pointer w-max">
+                      <div>
+                        <p class="text-sm text-white">${titre}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="p-4 text-sm text-white">
+                    <div class="flex items-center cursor-pointer w-max">
+                      <div>
+                        <p class="text-sm text-white">${type}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- type -->
+                  <td class="p-4 text-sm text-white">
+                    <div class="flex items-center cursor-pointer w-max">
+                      <div>
+                        <p class="text-sm text-white">${ques}</p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Question -->
+                  <td class="p-4 text-sm text-white">
+                    <div class="flex items-center cursor-pointer w-max">
+                      <div>
+                        <p class="text-sm text-white">${options}</p>
+                      </div>
+                    </div>
+                  </td>
+
+
+                  <!-- Options -->
+                  <td class="p-4 text-sm text-white">
+                    ${correctAnswer}
+                  </td>
+
+
+                    <!-- correct Answer -->
+                  <td class="p-4 text-sm text-white">
+                  ${exp}
+                  </td>
+
+                  <!-- Action -->
+                  <td class="p-4">
+                    <div class="flex items-center gap-4">
+                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
+                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
+                    </div>
+                  </td>
+                </tr>`
+
+          return tbody;
+
+}
+
+for (let category in QuizData) {
+  console.log(`Catégorie: ${category}`);
+  
+  QuizData[category].forEach((questionObj, index) => {
+        let tr = DisplayQuestions( category , questionObj.type , questionObj.question , questionObj.options , questionObj.correctAnswer , questionObj.explanation)
+
+        questiontable.innerHTML += tr; 
+      console.log(`Question ${index + 1}: ${questionObj.question}`);
+      console.log(`Option ${index + 1}: ${questionObj.options}`);
+
+  });
+  console.log("------------"); 
+}
+
 
 // ************************************************************************// 
 // *************************** Quiz Section *******************************// 
@@ -14,12 +135,6 @@ let ajoutBtn = document.getElementById("ajoutBtn");
 let ajoutModalQuiz = document.getElementById("ajoutModalQuiz");
 let close1 = document.getElementById("close1");
 let ajoutQuizBtn = document.getElementById("ajoutQuizBtn");
-
-
-let QuizData = JSON.parse(localStorage.getItem("QuizData"));
-let category = JSON.parse(localStorage.getItem("category"));
-
-let QuizItems = Object.keys(QuizData); 
 
 
 function getContent(){
@@ -56,6 +171,7 @@ ajoutQuizBtn.addEventListener("click" , ()=> {
 
     ajoutModalQuiz.style.display = "none";
     localStorage.setItem("category" ,JSON.stringify(category));
+
     window.location.reload(); 
 
     alert("le quizze a ete ajouter avec succes");
@@ -266,9 +382,9 @@ optionQuestion.addEventListener("change" , (e)=>{
   let opt = e.target.value.split(",");
   
   correctAnswerQuestion.innerHTML = ""
-  opt.forEach(element => {
+  opt.forEach((element , index) => {
 
-    correctAnswerQuestion.innerHTML += `<option value="${element}">${element}</option>`
+    correctAnswerQuestion.innerHTML += `<option value="${index}">${element}</option>`
 
   });
   
@@ -312,7 +428,6 @@ function getContentQuestion(){
 }
 
 
-
 // function handleClickMenu() {
 //     if (Menu.className.includes('block')) {
 //         Menu.classList.add('hidden');
@@ -347,10 +462,8 @@ ajoutQuestionBtn.addEventListener("click" , ()=> {
     alert("ajouter");
   }
 
- 
+});
 
-
-})
 
 
 
