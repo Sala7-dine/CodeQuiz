@@ -1,9 +1,18 @@
 let QuizData = JSON.parse(localStorage.getItem("QuizData"));
 let category = JSON.parse(localStorage.getItem("category"));
 
-let QuizItems = Object.keys(QuizData); 
+let QuizItems; 
 
-let arrayResult = JSON.parse(localStorage.arrayResult);
+if(QuizData != null){
+    QuizItems = Object.keys(QuizData);
+}
+
+let arr = localStorage.arrayResult;
+let arrayResult;
+
+if(arr != undefined){
+  arrayResult = JSON.parse(localStorage.arrayResult);
+}
 
 // Sidebar ------------------------------------------------------------------
 
