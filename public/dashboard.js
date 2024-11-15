@@ -3,6 +3,8 @@ let category = JSON.parse(localStorage.getItem("category"));
 
 let QuizItems = Object.keys(QuizData); 
 
+let arrayResult = JSON.parse(localStorage.arrayResult);
+
 // Sidebar ------------------------------------------------------------------
 
 let dashboard = document.querySelector(".dashboard");
@@ -37,11 +39,36 @@ questionSection.addEventListener("click" , ()=>{
 
 });
 
+
+/****************************** Statistiques ***********************************/
+
+let totalQuiz = document.getElementById("totalQuiz");
+let nbrParticipation  = document.getElementById("nbrParticipation");
+let moyenneScore = document.getElementById("moyenneScore");
+
+let totalScore = 0;
+let totalParcticip = arrayResult.length;
+
+let totalQ = category.length;
+
+arrayResult.forEach(element => {
+    totalScore += element.score;
+});
+
+let ScoreMoyenne = totalScore / totalParcticip;
+
+totalQuiz.textContent = totalQ;
+nbrParticipation.textContent = totalParcticip;
+moyenneScore.textContent = Math.floor(ScoreMoyenne);
+
+console.log(ScoreMoyenne);
+
+
 /** Display All Questions **/
 
 let questiontable = document.getElementById("questiontable");
 
-function DisplayQuestions(titre, type , ques , options , correctAnswer , exp){
+function DisplayQuestions(titre, type , ques , options , correctAnswer ){
 
   let tbody = `<tr class="hover:bg-[#253189] w-5/6">
 
@@ -86,12 +113,6 @@ function DisplayQuestions(titre, type , ques , options , correctAnswer , exp){
                     ${correctAnswer}
                   </td>
 
-
-                    <!-- correct Answer -->
-                  <td class="p-4 text-sm text-white">
-                  ${exp}
-                  </td>
-
                   <!-- Action -->
                   <td class="p-4">
                     <div class="flex items-center gap-4">
@@ -99,24 +120,95 @@ function DisplayQuestions(titre, type , ques , options , correctAnswer , exp){
                       <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
                     </div>
                   </td>
-                </tr>`
+              </tr>`
 
-          return tbody;
+    return tbody;
 
 }
 
+// Users -------------------------------------------------------------------
+
+function userTemplate(username , quizName , correct , incorrect , score){
+
+  let tr = `<tr class="hover:bg-[#253189]">
+                      <td class="p-4 text-sm text-white">
+                        <div class="flex items-center cursor-pointer w-max">
+                          <div>
+                            <p class="text-sm text-white">${username}</p>
+                          </div>
+                        </div>
+                      </td>
+
+
+                      <td class="p-4 text-sm text-white">
+                        <div class="flex items-center cursor-pointer w-max">
+                          <div>
+                            <p class="text-sm text-white">${quizName}</p>
+                          </div>
+                        </div>
+                      </td>
+
+
+                      <td class="p-4 text-sm text-green-500">
+                        ${correct}
+                      </td>
+
+
+                      <td class="p-4 text-sm text-red-500">
+                        ${incorrect}
+                      </td>
+
+
+                      <td class="p-4 text-sm text-white">
+                        ${score}
+                      </td>
+
+
+                      <td class="p-4">
+                        <div class="flex items-center gap-4">
+                          <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
+                          <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
+                        </div>
+                      </td>
+          </tr>`
+
+
+  return tr;
+
+}
+
+
+let userTable = document.getElementById("userTable");
+
+arrayResult.forEach(element => {
+
+      let tr = userTemplate(element.username , element.quizName , element.correct  , element.incorrect  , element.score);
+
+      userTable.innerHTML += tr;
+
+})
+
+
+
+
+// end --------------------------------------------------------------------
+
+
+
+
 for (let category in QuizData) {
-  console.log(`Catégorie: ${category}`);
+  //console.log(`Catégorie: ${category}`);
   
   QuizData[category].forEach((questionObj, index) => {
-        let tr = DisplayQuestions( category , questionObj.type , questionObj.question , questionObj.options , questionObj.correctAnswer , questionObj.explanation)
 
-        questiontable.innerHTML += tr; 
-      console.log(`Question ${index + 1}: ${questionObj.question}`);
-      console.log(`Option ${index + 1}: ${questionObj.options}`);
+      let tr = DisplayQuestions( category , questionObj.type , questionObj.question , questionObj.options , questionObj.correctAnswer)
+
+      questiontable.innerHTML += tr; 
+      // console.log(`Question ${index + 1}: ${questionObj.question}`);
+      // console.log(`Option ${index + 1}: ${questionObj.options}`);
+
 
   });
-  console.log("------------"); 
 }
 
 
@@ -286,72 +378,8 @@ close2.addEventListener("click" , ()=> {
     ajoutModalQuestion.style.display = "none";
 });
 
-
-// Display Quizzes -----------------------------------------------------------
-
-function TemplateTableQuesiotn(titre , type , question , options , correctAnswer , explanation){
-
-    let tbody = `<tr class="hover:bg-[#253189]">
-
-                <!-- titre -->
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">${titre}</p>
-                      </div>
-                    </div>
-                  </td>
-
-                  <!-- type -->
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">${type}</p>
-                      </div>
-                    </div>
-                  </td>
-
-                  <!-- Question -->
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">${question}</p>
-                      </div>
-                    </div>
-                  </td>
-
-
-                  <!-- Options -->
-                  <td class="p-4 text-sm text-white">
-                    ${options} min
-                  </td>
-
-
-                    <!-- correct Answer -->
-                  <td class="p-4 text-sm text-white">
-                  ${correctAnswer}
-                  </td>
-
-                  <!-- Explication -->
-                  <td class="p-4 text-sm text-white">
-                    ${explanation}
-                  </td>
-
-
-                  <!-- Action -->
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>`
-
-
-    return tbody;
-
-
-}
+  
+// Display Questions -----------------------------------------------------------
 
 selectOptions.addEventListener("change" , (e)=> {
   let textSection = document.getElementById("textSection");
@@ -389,6 +417,8 @@ optionQuestion.addEventListener("change" , (e)=>{
   });
   
 });
+
+
 
 function getContentQuestion(){
 

@@ -15,16 +15,16 @@
   <div id="countdown" class="text-5xl text-center mt-44 text-[#333]">3</div> -->
 
     <div>
-        <img class="absolute right-0 top-0 z-0" src="../images/Group 1.svg" alt="">
+        <img class="absolute right-0 top-0 z-0 max-md:w-40" src="../images/Group 1.svg" alt="">
       </div>
       <div>
-        <img class="absolute left-0 bottom-0 z-0" src="../images/Group 2.svg" alt="">
+        <img class="absolute left-0 bottom-0 z-0 max-md:w-60" src="../images/Group 2.svg" alt="">
       </div>
       
     <!-- Home -->
     <section class="w-full flex flex-col items-center h-screen  bg-[#090E34]">
      
-        <div class="flex py-5 px-2 justify-between w-10/12 mt-10 text-white text-[20px] font-bold">
+        <div class="flex py-5 px-2 justify-between w-10/12 mt-10 text-white text-[20px] max-md:text-[14px] font-bold">
 
             <h1 class="z-50">Timer : <span id="timerElement">0 min 0 s</span></h1>
             <h1 class="z-50">Q : <span id="ques"></span></h1>
@@ -40,7 +40,7 @@
           <div class="bg-green-500 h-2 w-0" id="progress"></div>
         </div>
 
-        <div class="flex justify-center w-full " id="questionsParent">
+        <div class="flex justify-center w-full" id="questionsParent">
 
           
           
@@ -49,11 +49,11 @@
 
         <div class="absolute flex justify-between w-full">
           <button  id="prevBtn" onclick="nextPrev(-1)"
-          class='max-md:hidden h-12 w-12 text-sm text-center invisible rounded-tr-xl rounded-br-xl font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>
+          class='h-12 w-12 max-md:h-8 max-md:w-8 text-sm text-center invisible rounded-tr-xl rounded-br-xl font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>
           <i class="fa fa-arrow-circle-left" style="font-size:25px"></i>
          </button>
           <button   id="nextBtn" onclick="nextPrev(1)"
-          class='max-md:hidden h-12 w-12 text-sm text-center invisible rounded-tl-xl rounded-bl-xl font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>
+          class='h-12 w-12 max-md:h-8 max-md:w-8 text-sm text-center invisible rounded-tl-xl rounded-bl-xl font-bold text-white bg-[#4a6cf7] transition-all ease-in-out duration-300 hover:bg-[#2f49af]'>
           <i class="fa fa-arrow-circle-right" style="font-size:25px"></i>
          </button>
 

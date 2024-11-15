@@ -9,7 +9,7 @@
     <link rel="icon" href="/images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="bg-[#090E34] flex"> 
+<body class="bg-[#090E34] flex overflow-x-hidden"> 
      
     <nav class="bg-[#0e1548] h-screen sticky top-0 left-0 min-w-[260px] py-6 px-4 font-[sans-serif] flex flex-col overflow-hidden">
         <div class="flex flex-wrap flex-col justify-center items-center cursor-pointer">
@@ -170,10 +170,10 @@
                 <img class="absolute bottom-6 right-6" src="../images/Group 11.svg" alt="">
                 <div class="flex justify-between items-center gap-x-3">
                     <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                    <h1 class="text-gray-300 text-lg font-medium">Utilisateurs</h1>
+                    <h1 class="text-gray-300 text-lg font-medium" >Total Quiz</h1>
                 </div>      
 
-                <h1 class="text-white font-bold text-4xl">1524</h1>
+                <h1 class="text-white font-bold text-4xl" id="totalQuiz">1524</h1>
 
                 <div class="flex justify-center items-center gap-2">
                     <h3 class="bg-[#0ee87bf2] text-[10px] rounded-xl w-10 text-center text-white text-bold">+21%</h3>
@@ -185,10 +185,10 @@
               <img class="absolute bottom-6 right-6" src="../images/Group 30.svg" alt="">
                 <div class="flex justify-between items-center gap-x-3">
                     <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <h1 class="text-gray-300 text-lg font-medium">Total Quiz</h1>
+                    <h1 class="text-gray-300 text-lg font-medium">N° Participation</h1>
                 </div>      
 
-                <h1 class="text-white font-bold text-4xl">520</h1>
+                <h1 class="text-white font-bold text-4xl" id="nbrParticipation">520</h1>
 
                 <div class="flex justify-center items-center gap-2">
                     <h3 class="bg-[#0ee87bf2] text-[10px] rounded-xl w-10 text-center text-white text-bold">+10%</h3>
@@ -200,10 +200,10 @@
               <img class="absolute bottom-6 right-6" src="../images/Group 29.svg" alt="">
                 <div class="flex justify-between items-center gap-x-3">
                     <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                    <h1 class="text-gray-300 text-lg font-medium">N° Participation</h1>
+                    <h1 class="text-gray-300 text-lg font-medium">Score Moyenne</h1>
                 </div>      
 
-                <h1 class="text-white font-bold text-4xl">243</h1>
+                <h1 class="text-white font-bold text-4xl" id="moyenneScore">243</h1>
 
                 <div class="flex justify-center items-center gap-2">
                     <h3 class="bg-[#0ee87bf2] text-[10px] rounded-xl w-10 text-center text-white text-bold">+33%</h3>
@@ -290,210 +290,8 @@
                 </tr>
               </thead>
       
-              <tbody class="whitespace-nowrap divide-y divide-gray-700">
-                <tr class="hover:bg-[#253189]">
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-green-500">
-                    $8,000,000
-                  </td>
-                  <td class="p-4 text-sm text-red-500">
-                    $550
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    Intertico
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>
-      
-                
-                <tr class="hover:bg-[#253189]">
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-green-500">
-                    $8,000,000
-                  </td>
-                  <td class="p-4 text-sm text-red-500">
-                    $550
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    Intertico
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>
-      
-                
-                <tr class="hover:bg-[#253189]">
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-green-500">
-                    $8,000,000
-                  </td>
-                  <td class="p-4 text-sm text-red-500">
-                    $550
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    Intertico
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>
-      
-                
-                <tr class="hover:bg-[#253189]">
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-green-500">
-                    $8,000,000
-                  </td>
-                  <td class="p-4 text-sm text-red-500">
-                    $550
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    Intertico
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>
-      
-                
-                <tr class="hover:bg-[#253189]">
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-green-500">
-                    $8,000,000
-                  </td>
-                  <td class="p-4 text-sm text-red-500">
-                    $550
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    Intertico
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>
-      
-                
-                <tr class="hover:bg-[#253189]">
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
-                      <div>
-                        <p class="text-sm text-white">Gladys Jones</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="p-4 text-sm text-green-500">
-                    $8,000,000
-                  </td>
-                  <td class="p-4 text-sm text-red-500">
-                    $550
-                  </td>
-                  <td class="p-4 text-sm text-white">
-                    Intertico
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-center gap-4">
-                      <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
-                    </div>
-                  </td>
-                </tr>
-      
-                
-                
-                
-              
-      
-                
+              <tbody class="whitespace-nowrap divide-y divide-gray-700" id="userTable">
+
 
               </tbody>
             </table>
@@ -835,7 +633,7 @@
           </div>
 
           <!-- Tablaux de quiz -->
-          <div class="overflow-x-auto w-11/12 font-[sans-serif]">
+          <div class="overflow-x-auto font-[sans-serif]">
             <table class="min-w-full bg-[#0f154f]">
               <thead class="whitespace-nowrap bg-[#05071b] rounded">
                 <tr>
@@ -854,9 +652,7 @@
                   <th class="p-4 text-left text-sm font-semibold text-white">
                     La bonne reponse
                   </th>
-                  <th class="p-4 text-left text-sm font-semibold text-white">
-                    Explication
-                  </th>
+          
                   <th class="p-4 text-left text-sm font-semibold text-white">
                     Action
                   </th>

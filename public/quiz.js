@@ -1,4 +1,9 @@
 let QuizData = JSON.parse(localStorage.getItem("QuizData"));
+let username = localStorage.username;
+
+let arrayResult = JSON.parse(localStorage.arrayResult);
+
+console.log(arrayResult);
 
 let savedValue = localStorage.getItem("clickedCard").toLocaleLowerCase();
 let nextBtn = document.getElementById("nextBtn");
@@ -22,7 +27,7 @@ let res = (id , reponse) => {
   
   let div = `<label class="z-50 btn">
            <input type="radio" name="reponse" class="hidden responseInput" onclick="selectResponse('response${id}' , ${id})" />
-           <div id="response${id}" class="px-8 py-4  rounded-lg cursor-pointer bg-gray-200">
+           <div id="response${id}" class="px-8 py-4 max-md:px-6 max-md:py-2 rounded-lg cursor-pointer bg-gray-200">
                ${reponse}
            </div>
        </label>`
@@ -36,7 +41,7 @@ let Parentrsp = document.getElementById("Parentrsp");
 
 value.forEach(question => {
 
-   let ques = `<h1 class="font-sans text-[40px] text-wrap text-white text-center font-bold w-11/12 hidden tab">${question.question}</h1>`
+   let ques = `<h1 class="font-sans text-[40px] max-md:text-[25px] text-wrap text-white text-center font-bold w-11/12 hidden tab">${question.question}</h1>`
 
    questionsParent.innerHTML += ques;
 
@@ -138,23 +143,39 @@ function inputTextInCorrect(question , rep1 , correct){
   return div
 }
 
+function getResult(username , quizName , correct , incorrect , score){
+    
+    let obj = {
+      username : username ,
+      quizName : quizName ,
+      correct : correct ,
+      incorrect: incorrect ,
+      score : score 
+    }
+    return obj;
+}
 
 // Radio response button -------------------------------------------------
 
 window.selectResponse = function (selectedId , id) {
   nextBtn.style.visibility = "visible";
 
-  if(currentTab == value.length - 1){
-    resultQuize.style.display = "flex";
+  // if(currentTab == value.length - 1){
+  //   resultQuize.style.display = "flex";
 
-    setTimeout(function () {
-      scrollTo({
-        top: 800, 
-        left: 0,  
-        behavior: 'smooth' 
-      });
-    }, 1500);
-  }
+  //   setTimeout(function () {
+  //     scrollTo({
+  //       top: 800, 
+  //       left: 0,  
+  //       behavior: 'smooth' 
+  //     });
+  //   }, 1500);
+
+
+
+  //   console.log();
+
+  // }
 
   if(--id == value[currentTab].correctAnswer){
   
@@ -202,7 +223,7 @@ window.selectResponse = function (selectedId , id) {
       input.disabled = true;
     })
 
-    NumberOfInCorrectAnswers += 1;
+    NumberOfInCorrectAnswers += 1;    
   
   document.getElementById(selectedId).classList.remove('bg-gray-200');
   document.getElementById(selectedId).classList.add('bg-red-500', 'text-white');
@@ -271,6 +292,30 @@ let incorrectQuiz = document.getElementById("incorrectQuiz");
   percentageQuize.innerHTML = accuracy;
   correctQuiz.innerHTML = NumberOfCorrectAnswers;
   incorrectQuiz.innerHTML = NumberOfInCorrectAnswers; 
+
+
+
+  
+  if(currentTab == value.length - 1){
+    resultQuize.style.display = "flex";
+
+    setTimeout(function () {
+      scrollTo({
+        top: 800, 
+        left: 0,  
+        behavior: 'smooth' 
+      });
+    }, 1500);
+
+
+    let objectResult = getResult(username , savedValue , NumberOfCorrectAnswers , NumberOfInCorrectAnswers , counter);
+    console.log(objectResult);
+
+    arrayResult.push(objectResult);
+    localStorage.arrayResult = JSON.stringify(arrayResult);
+  }
+
+
 }
 
 // Radio response button -------------------------------------------------
@@ -357,7 +402,7 @@ window.textInput = function (){
     }, 1500);
 
 
-
+    console.log('haaada rah lakher dyal lakher 2222');
 
 
     let titleQuize = document.getElementById("titleQuize");
@@ -378,6 +423,14 @@ window.textInput = function (){
       percentageQuize.innerHTML = accuracy;
       correctQuiz.innerHTML = NumberOfCorrectAnswers;
       incorrectQuiz.innerHTML = NumberOfInCorrectAnswers; 
+
+
+      let objectResult = getResult(username , savedValue , NumberOfCorrectAnswers , NumberOfInCorrectAnswers , counter);
+      console.log(objectResult);
+  
+      arrayResult.push(objectResult);
+      localStorage.arrayResult = JSON.stringify(arrayResult);
+
   }
 
  
@@ -473,6 +526,7 @@ window.nextPrev = function (n) {
 
    currentTab = currentTab + n;
    showTab(currentTab); 
+  
  } 
 }
 
