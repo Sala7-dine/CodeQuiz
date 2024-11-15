@@ -56,9 +56,19 @@ let nbrParticipation  = document.getElementById("nbrParticipation");
 let moyenneScore = document.getElementById("moyenneScore");
 
 let totalScore = 0;
-let totalParcticip = arrayResult.length;
 
-let totalQ = category.length;
+
+let totalParcticip;
+
+if(arrayResult != undefined){
+  totalParcticip = arrayResult.length;
+}
+
+let totalQ;
+
+if(category != undefined){
+  totalQ = category.length;
+}
 
 arrayResult.forEach(element => {
     totalScore += element.score;
