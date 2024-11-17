@@ -7,8 +7,10 @@ let inputQuiz = document.getElementById("inputQuiz");
 let close1 = document.querySelector(".close");
 let clickedCard = "";
 let existUser = document.getElementById("exist");
+let arrayResult; 
 
-let arrayResult = JSON.parse(localStorage.arrayResult);
+
+arrayResult = localStorage.arrayResult != undefined ? JSON.parse(localStorage.arrayResult) : [];
 
 let category = JSON.parse(localStorage.category); 
 

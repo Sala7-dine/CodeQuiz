@@ -8,7 +8,7 @@ if(QuizData != null){
 }
 
 let arr = localStorage.arrayResult;
-let arrayResult;
+let arrayResult = [];
 
 if(arr != undefined){
   arrayResult = JSON.parse(localStorage.arrayResult);
@@ -213,8 +213,6 @@ arrayResult.forEach(element => {
 // end --------------------------------------------------------------------
 
 
-
-
 for (let category in QuizData) {
   //console.log(`Catégorie: ${category}`);
   
@@ -223,8 +221,6 @@ for (let category in QuizData) {
       let tr = DisplayQuestions( category , questionObj.type , questionObj.question , questionObj.options , questionObj.correctAnswer)
 
       questiontable.innerHTML += tr; 
-      // console.log(`Question ${index + 1}: ${questionObj.question}`);
-      // console.log(`Option ${index + 1}: ${questionObj.options}`);
 
 
   });
@@ -246,7 +242,7 @@ let ajoutBtn = document.getElementById("ajoutBtn");
 let ajoutModalQuiz = document.getElementById("ajoutModalQuiz");
 let close1 = document.getElementById("close1");
 let ajoutQuizBtn = document.getElementById("ajoutQuizBtn");
-
+let ajouteCancelQuiz = document.getElementById("ajouteCancelQuiz");
 
 function getContent(){
 
@@ -273,6 +269,7 @@ ajoutBtn.addEventListener("click" , ()=> {
 close1.addEventListener("click" , ()=> {
     ajoutModalQuiz.style.display = "none";
 });
+
 
 
 ajoutQuizBtn.addEventListener("click" , ()=> {
@@ -403,6 +400,12 @@ checkbox.forEach(btn => {
   });
 });
 
+ajouteCancelQuiz.addEventListener("click" , ()=> {
+  ajoutModalQuiz.style.display = "none"
+})
+
+
+
 // Modifie -----------------------------------------------------------------------
 
 
@@ -415,6 +418,7 @@ let modifieModalQuiz = document.getElementById("modifieModalQuiz");
 let closem = document.getElementById("closem");
 let modifieQuizBtn = document.getElementById("modifieQuizBtn");
 
+let modifieCancelQuiz = document.getElementById("modifieCancelQuiz");
 let modifie = document.querySelectorAll(".modifie");
 
 function getModifieContent(){
@@ -456,6 +460,7 @@ modifie.forEach(element => {
 
 modifieQuizBtn.addEventListener("click" , () => {
   let modifiedContent = getModifieContent();
+  modifiedContent.id = idm+1;
   category[idm] = modifiedContent;
   localStorage.category = JSON.stringify(category);  
   alert("Le Quizze a ete Modifie avec succes !");
@@ -463,6 +468,11 @@ modifieQuizBtn.addEventListener("click" , () => {
 
 });
 
+
+
+modifieCancelQuiz.addEventListener("click" , ()=> {
+    modifieModalQuiz.style.display = "none";
+}) 
 
 
 // ***************************************************************************** // 
@@ -482,8 +492,7 @@ let correctAnswerQuestion = document.getElementById("correctAnswerQuestion");
 let explicationQuestion = document.getElementById("explicationQuestion");
 let quizzesOptions = document.getElementById("quizzesOptions");
 let ajoutQuestionBtn = document.getElementById("ajoutQuestionBtn");
-
-
+let questionCancel = document.getElementById("questionCancel");
 
 questionBtn.addEventListener("click" , ()=> {
     ajoutModalQuestion.style.display = "flex";
@@ -618,4 +627,7 @@ ajoutQuestionBtn.addEventListener("click" , ()=> {
 
 
 
+questionCancel.addEventListener("click" , ()=>{
+  ajoutModalQuestion.style.display = "none";
+})
 
