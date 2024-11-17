@@ -6,8 +6,9 @@ let submitBtn = document.getElementById("submitBtn");
 let inputQuiz = document.getElementById("inputQuiz");
 let close1 = document.querySelector(".close");
 let clickedCard = "";
+let existUser = document.getElementById("exist");
 
-
+let arrayResult = JSON.parse(localStorage.arrayResult);
 
 let category = JSON.parse(localStorage.category); 
 
@@ -31,8 +32,8 @@ toggleClose.addEventListener('click', handleClick);
 let cardsParents = document.getElementById("cardsParents");
 
 
-const TemplateCard = function(id,title , desc , nv , qs , time){
-    const div = `<div class="bg-[#508aff17] relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] max-w-md rounded-lg overflow-hidden font-[sans-serif]" >
+const TemplateCard = function(id,title , desc , nv , qs , time , status){
+    const div = `<div class="bg-[#508aff17] ${status ? 'hidden' : ''} relative shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] max-w-md rounded-lg overflow-hidden font-[sans-serif]">
           <div class="min-h-[256px]">
             <img src="../images/imgq.webp" class="w-full" />
           </div>
@@ -58,9 +59,10 @@ const TemplateCard = function(id,title , desc , nv , qs , time){
 }
 
 
-category.forEach(card => {
+category.forEach((card) => {
 
-    let div = TemplateCard(card.id , card.titre , card.description , card.niveux , card.nbrQuestion , card.time);
+    let div = TemplateCard(card.id , card.titre , card.description , card.niveux , card.nbrQuestion , card.time , card.status);
+    
 
     cardsParents.innerHTML += div;
 
@@ -82,13 +84,37 @@ btnValue.forEach(btn =>
 submitBtn.addEventListener("click" , ()=> {
 
   let username = inputQuiz.value;
-  localStorage.setItem("clickedCard" , clickedCard);
-  localStorage.setItem("username" , username);
-  inputQuiz.innerHTML = "";
-  window.location.href = "quiz.html";
-  modalQuizze.style.display = "none";
+  let exist = false;
 
-})
+  for (let i = 0; i < arrayResult.length; i++) {
+    
+    if(arrayResult[i].username === username || username === ""){
+      exist = true;
+      console.log(exist);
+      break;
+    }else{
+      exist = false;
+    }
+    
+  }
+
+  if(!exist){
+    localStorage.setItem("clickedCard" , clickedCard);
+    localStorage.setItem("username" , username);
+    inputQuiz.innerHTML = "";
+    window.location.href = "quiz.html";
+    modalQuizze.style.display = "none";
+  }else{
+    inputQuiz.value = "";
+    inputQuiz.style.border = "1px solid red";
+    existUser.innerHTML = "Le nom déja exist";
+    existUser.style.color = "red";
+    existUser.style.marginTop = "8px";
+  }
+
+
+
+});
 
 
 close1.addEventListener("click" , ()=> {
@@ -96,12 +122,6 @@ close1.addEventListener("click" , ()=> {
   modalQuizze.style.display = "none";
 
 })
-
-
-
-
-
-
 
 
 

@@ -80,7 +80,7 @@ totalQuiz.textContent = totalQ;
 nbrParticipation.textContent = totalParcticip;
 moyenneScore.textContent = Math.floor(ScoreMoyenne);
 
-console.log(ScoreMoyenne);
+//console.log(ScoreMoyenne);
 
 
 /** Display All Questions **/
@@ -89,11 +89,11 @@ let questiontable = document.getElementById("questiontable");
 
 function DisplayQuestions(titre, type , ques , options , correctAnswer ){
 
-  let tbody = `<tr class="hover:bg-[#253189] w-5/6">
+  let tbody = `<tr class="hover:bg-[#253189]">
 
                 <!-- titre -->
                   <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
+                    <div class="flex items-center cursor-pointer">
                       <div>
                         <p class="text-sm text-white">${titre}</p>
                       </div>
@@ -101,7 +101,7 @@ function DisplayQuestions(titre, type , ques , options , correctAnswer ){
                   </td>
 
                   <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
+                    <div class="flex items-center cursor-pointer">
                       <div>
                         <p class="text-sm text-white">${type}</p>
                       </div>
@@ -110,7 +110,7 @@ function DisplayQuestions(titre, type , ques , options , correctAnswer ){
 
                   <!-- type -->
                   <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
+                    <div class="flex items-center cursor-pointer">
                       <div>
                         <p class="text-sm text-white">${ques}</p>
                       </div>
@@ -119,7 +119,7 @@ function DisplayQuestions(titre, type , ques , options , correctAnswer ){
 
                   <!-- Question -->
                   <td class="p-4 text-sm text-white">
-                    <div class="flex items-center cursor-pointer w-max">
+                    <div class="flex items-center cursor-pointer">
                       <div>
                         <p class="text-sm text-white">${options}</p>
                       </div>
@@ -258,7 +258,8 @@ function getContent(){
         titre:tittreQuiz.value,
         description:descriptionQuiz.value,
         nbrQuestion:nbrQuiz.value,
-        time:timeQuiz.value
+        time:timeQuiz.value,
+        statut:false 
     }
 
     return obj;
@@ -293,7 +294,7 @@ ajoutQuizBtn.addEventListener("click" , ()=> {
 
 // Display Quizzes -----------------------------------------------------------
 
-function TemplateTableQuiz(id , titre , niveux , time , question , des){
+function TemplateTableQuiz(id , titre , niveux , time , question , status , des){
 
     let tbody = `<tr class="hover:bg-[#253189]">
 
@@ -336,6 +337,20 @@ function TemplateTableQuiz(id , titre , niveux , time , question , des){
                   ${question}
                   </td>
 
+                  <td class="p-4 text-sm text-white">
+                    <div class="flex items-center">
+                    <input id="checkbox${id}" type="checkbox" class="hidden peer checkbox" value="${id}" ${status ? "" : "checked"}/>
+                    <label for="checkbox${id}"
+                      class="relative flex items-center justify-center p-1 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-6 h-6 cursor-pointer bg-green-500 border rounded overflow-hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-full fill-white" viewBox="0 0 520 520">
+                        <path
+                          d="M79.423 240.755a47.529 47.529 0 0 0-36.737 77.522l120.73 147.894a43.136 43.136 0 0 0 36.066 16.009c14.654-.787 27.884-8.626 36.319-21.515L486.588 56.773a6.13 6.13 0 0 1 .128-.2c2.353-3.613 1.59-10.773-3.267-15.271a13.321 13.321 0 0 0-19.362 1.343q-.135.166-.278.327L210.887 328.736a10.961 10.961 0 0 1-15.585.843l-83.94-76.386a47.319 47.319 0 0 0-31.939-12.438z"
+                          data-name="7-Check" data-original="#000000" />
+                      </svg>
+                    </label>
+                  </div>
+                  </td>
+
                   <!-- Description -->
                   <td class="p-4 text-sm text-white">
                     ${des}
@@ -346,7 +361,7 @@ function TemplateTableQuiz(id , titre , niveux , time , question , des){
                   <td class="p-4">
                     <div class="flex items-center gap-4">
                       <i class="fa fa-trash cursor-pointer text-yellow-500" style="font-size:23px"></i>
-                      <i class="fa fa-edit cursor-pointer text-yellow-500" style="font-size:24px"></i>
+                      <i class="fa fa-edit cursor-pointer text-yellow-500 modifie" style="font-size:24px" id="${id}"></i>
                     </div>
                   </td>
                 </tr>`
@@ -358,8 +373,96 @@ function TemplateTableQuiz(id , titre , niveux , time , question , des){
 }
 
 category.forEach(element => {
-    quiztable.innerHTML += TemplateTableQuiz(element.id , element.titre , element.niveux , element.time , element.nbrQuestion , element.description);
+    quiztable.innerHTML += TemplateTableQuiz(element.id , element.titre , element.niveux , element.time , element.nbrQuestion ,element.status ,  element.description);
 });
+
+let checkbox = document.querySelectorAll(".checkbox");
+
+checkbox.forEach(btn => {
+  btn.addEventListener("click"  , (e) => {
+    let value = e.target.value;
+
+    category.forEach(elem => {
+      if(elem.id == value){
+        //console.log(btn.checked)
+          if(btn.checked){
+            elem.status = false;
+            localStorage.category = JSON.stringify(category);
+            //console.log(elem);
+          }else{
+            elem.status = true;
+            localStorage.category = JSON.stringify(category);
+            //console.log(elem);
+          }
+        
+      }
+    })
+
+      // console.log(e.target.value);
+      // console.log(btn.checked);
+  });
+});
+
+// Modifie -----------------------------------------------------------------------
+
+
+let tittreQuizm = document.getElementById("titreQuizm");
+let descriptionQuizm = document.getElementById("descriptionQuizm");
+let nbrQuizm = document.getElementById("nbrQuizm");
+let timeQuizm  = document.getElementById("timeQuizm");
+let nvQuizm = document.getElementById("nvQuizm");
+let modifieModalQuiz = document.getElementById("modifieModalQuiz");
+let closem = document.getElementById("closem");
+let modifieQuizBtn = document.getElementById("modifieQuizBtn");
+
+let modifie = document.querySelectorAll(".modifie");
+
+function getModifieContent(){
+
+  let obj = {
+      niveux:nvQuizm.value,
+      titre:tittreQuizm.value,
+      description:descriptionQuizm.value,
+      nbrQuestion:nbrQuizm.value,
+      time:timeQuizm.value,
+  }
+
+  return obj;
+
+}
+
+
+
+let idm = null;
+
+modifie.forEach(element => {
+
+  element.addEventListener("click" , (e)=>{
+
+    modifieModalQuiz.style.display = "flex";
+    idm = e.target.id-1;
+    let obj = category[idm];
+
+    nvQuizm.value = obj.niveux
+    tittreQuizm.value = obj.titre
+    descriptionQuizm.value = obj.description
+    nbrQuizm.value = obj.nbrQuestion
+    timeQuizm.value = obj.time
+
+  })
+
+});
+
+
+modifieQuizBtn.addEventListener("click" , () => {
+  let modifiedContent = getModifieContent();
+  category[idm] = modifiedContent;
+  localStorage.category = JSON.stringify(category);  
+  alert("Le Quizze a ete Modifie avec succes !");
+  modifieModalQuiz.style.display = "none";
+
+});
+
 
 
 // ***************************************************************************** // 

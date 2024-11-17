@@ -11,7 +11,7 @@
     <link rel="icon" href="/images/favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="bg-[#090E34] flex overflow-x-hidden"> 
+<body class="bg-[#090E34] flex"> 
      
     <nav class="bg-[#0e1548] h-screen sticky top-0 left-0 min-w-[260px] py-6 px-4 font-[sans-serif] flex flex-col overflow-hidden">
         <div class="flex flex-wrap flex-col justify-center items-center cursor-pointer">
@@ -166,7 +166,7 @@
 
         </div>
 
-        <div class="flex w-full gap-2 mt-12">
+        <div class="flex max-lg:flex-wrap w-full gap-2 mt-12">
 
             <div class="bg-[#161e6bbc] w-4/12 py-5 flex flex-col items-start gap-4 pl-10 rounded-xl relative">
                 <img class="absolute bottom-6 right-6" src="../images/Group 11.svg" alt="">
@@ -429,7 +429,78 @@
 
                 </form>
             </div>
-        </div>
+            </div>
+
+            <!-- Modal Modifie Quizze -->
+
+            <div id="modifieModalQuiz"
+            class="fixed inset-0 p-4 hidden flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.5)] overflow-auto font-[sans-serif]">
+            <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-8 relative">
+                <div class="flex items-center">
+                    <h3 class="text-blue-600 text-3xl font-bold flex-1 text-center w-full">Modifier Quizze</h3>
+
+                    <div id="closem"> 
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 ml-2 cursor-pointer shrink-0 fill-gray-400 hover:fill-red-500"
+                      viewBox="0 0 320.591 320.591">
+                      <path
+                          d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+                          data-original="#000000"></path>
+                      <path
+                          d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+                          data-original="#000000"></path>
+                      </svg>
+                    </div>
+                    
+                </div>
+
+                <form class="space-y-4 mt-8">
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Titre de Quizze</labe>
+                        <input type="text" placeholder="Saisir le titre..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="titreQuizm" />
+                    </div>
+
+
+                    <div>
+                      <labe class="text-gray-800 text-sm mb-2 block">Niveux</labe>
+                      <input type="text" placeholder="Saise le niveux"
+                          class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="nvQuizm" />
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Descriptions</labe>
+                        <textarea placeholder='Saisir la description...'
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="descriptionQuizm" rows="3"></textarea>
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">N° de Questions</labe>
+                        <input type="number" placeholder="Saisie le nombre..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="nbrQuizm" />
+                    </div>
+
+
+                    <div>
+                        <labe class="text-gray-800 text-sm mb-2 block">Temp de Quizze</labe>
+                        <input type="number" placeholder="Time..."
+                            class="px-4 py-3 bg-gray-100 w-full text-gray-800 text-sm border-none focus:outline-blue-600 focus:bg-transparent rounded-lg" id="timeQuizm" />
+                    </div>
+
+
+                    
+                    <div class="flex justify-end gap-4 !mt-8">
+                        <button type="button"
+                            class="px-6 py-3 rounded-lg text-gray-800 text-sm border-none outline-none tracking-wide bg-gray-200 hover:bg-gray-300">Cancel</button>
+                        <button type="button" id="modifieQuizBtn"
+                            class="px-6 py-3 rounded-lg text-white text-sm border-none outline-none tracking-wide bg-blue-600 hover:bg-blue-700">Modifie</button>
+                    </div>
+
+
+                </form>
+            </div>
+            </div>
 
             <!-- Fin Ajout Quiz -->
            
@@ -456,6 +527,12 @@
                   <th class="p-4 text-left text-sm font-semibold text-white">
                     N° Question
                   </th>
+
+                  
+                  <th class="p-4 text-left text-sm font-semibold text-white">
+                    status
+                  </th>
+
                   <th class="p-4 text-left text-sm font-semibold text-white">
                     Description
                   </th>
@@ -637,7 +714,7 @@
           <!-- Tablaux de quiz -->
           <div class="overflow-x-auto font-[sans-serif]">
             <table class="min-w-full bg-[#0f154f]">
-              <thead class="whitespace-nowrap bg-[#05071b] rounded">
+              <thead class="whitespace-wrap bg-[#05071b] rounded">
                 <tr>
                   <th class="p-4 text-left text-sm font-semibold text-white ">
                     Titre
@@ -661,7 +738,7 @@
                 </tr>
               </thead>
       
-              <tbody class="whitespace-nowrap divide-y divide-gray-700" id="questiontable">
+              <tbody class="whitespace-wrap divide-y divide-gray-700" id="questiontable">
            
           
                 

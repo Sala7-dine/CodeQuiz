@@ -1,7 +1,12 @@
 let QuizData = JSON.parse(localStorage.getItem("QuizData"));
 let username = localStorage.username;
 
-let arrayResult = JSON.parse(localStorage.arrayResult);
+let arr = localStorage.arrayResult;
+let arrayResult = []; 
+
+if(arr != undefined){
+  arrayResult = JSON.parse(localStorage.arrayResult);
+}
 
 console.log(arrayResult);
 
@@ -186,7 +191,7 @@ window.selectResponse = function (selectedId , id) {
     });
 
         
-    document.getElementById(selectedId).classList.remove('bg-gray-500');
+    document.getElementById(selectedId).classList.remove('bg-gray-200');
     document.getElementById(selectedId).classList.add('bg-green-500', 'text-white');
 
 

@@ -177,7 +177,8 @@ const category = [
         titre: "JavaScript",
         description: "Un quiz pour tester vos bases en JavaScript, des variables aux boucles.",
         nbrQuestion: 5,
-        time: 3
+        time: 3 , 
+        status: true 
     },
     {
         id: 2,
@@ -185,7 +186,8 @@ const category = [
         titre: "HTML",
         description: "Découvrez votre niveau en HTML en répondant à des questions de difficulté moyenne.",
         nbrQuestion: 7,
-        time: 5
+        time: 5 , 
+        status: true 
     },
     {
         id: 3,
@@ -193,7 +195,8 @@ const category = [
         titre: "CSS",
         description: "Connaissez-vous les bases du CSS ? Vérifiez-le avec ce quiz simple.",
         nbrQuestion: 6,
-        time: 2
+        time: 2 , 
+        status: true 
     },
     {
         id: 4,
@@ -201,7 +204,8 @@ const category = [
         titre: "Python",
         description: "Un challenge en Python pour les développeurs expérimentés !",
         nbrQuestion: 10,
-        time: 8
+        time: 8 , 
+        status: true 
     },
     {
         id: 5,
@@ -209,7 +213,8 @@ const category = [
         titre: "Java",
         description: "Testez vos compétences en Java avec des questions intermédiaires.",
         nbrQuestion: 6,
-        time: 6
+        time: 6 , 
+        status: true 
     },
     {
         id: 6,
@@ -217,7 +222,8 @@ const category = [
         titre: "React",
         description: "Découverte des concepts de base du framework React.",
         nbrQuestion: 5,
-        time: 4
+        time: 4 , 
+        status: true 
     },
     {
         id: 7,
@@ -225,7 +231,8 @@ const category = [
         titre: "Node.js",
         description: "Un quiz avancé pour les experts en développement backend.",
         nbrQuestion: 8,
-        time: 10
+        time: 10 , 
+        status: true 
     },
     {
         id: 8,
@@ -233,7 +240,8 @@ const category = [
         titre: "SQL",
         description: "Maîtrisez les requêtes de base avec ce quiz sur SQL.",
         nbrQuestion: 4,
-        time: 3
+        time: 3 , 
+        status: true 
     },
     {
         id: 9,
@@ -241,7 +249,8 @@ const category = [
         titre: "PHP",
         description: "Mettez vos connaissances PHP à l’épreuve avec des questions variées.",
         nbrQuestion: 7,
-        time: 6
+        time: 6 , 
+        status: true 
     },
     {
         id: 10,
@@ -249,7 +258,8 @@ const category = [
         titre: "Git",
         description: "Vérifiez votre maîtrise de Git et des commandes avancées.",
         nbrQuestion: 9,
-        time: 8
+        time: 8 , 
+        status: true 
     },
     {
         id: 11,
@@ -257,7 +267,8 @@ const category = [
         titre: "JSON",
         description: "Apprenez les bases du format JSON avec des questions simples.",
         nbrQuestion: 3,
-        time: 2
+        time: 2 , 
+        status: true 
     },
     {
         id: 12,
@@ -265,7 +276,8 @@ const category = [
         titre: "MongoDB",
         description: "Testez vos connaissances intermédiaires en bases de données NoSQL.",
         nbrQuestion: 7,
-        time: 5
+        time: 5 , 
+        status: true 
     },
     {
         id: 13,
@@ -273,7 +285,8 @@ const category = [
         titre: "Vue.js",
         description: "Apprenez les bases de Vue.js avec des questions pour débutants.",
         nbrQuestion: 4,
-        time: 3
+        time: 3 , 
+        status: true 
     },
     {
         id: 14,
@@ -281,7 +294,8 @@ const category = [
         titre: "Typescript",
         description: "Un quiz pour les développeurs avancés en TypeScript.",
         nbrQuestion: 10,
-        time: 9
+        time: 9 , 
+        status: true 
     },
     {
         id: 15,
@@ -289,7 +303,8 @@ const category = [
         titre: "C++",
         description: "Testez vos compétences en programmation orientée objet avec le C++.",
         nbrQuestion: 6,
-        time: 7
+        time: 7 , 
+        status: true 
     },
     {
         id: 16,
@@ -297,7 +312,8 @@ const category = [
         titre: "Bootstrap",
         description: "Découvrez les bases de Bootstrap pour le design responsive.",
         nbrQuestion: 5,
-        time: 3
+        time: 3 , 
+        status: true 
     },
     {
         id: 17,
@@ -305,7 +321,8 @@ const category = [
         titre: "Docker",
         description: "Un quiz avancé pour maîtriser Docker et les conteneurs.",
         nbrQuestion: 8,
-        time: 9
+        time: 9 , 
+        status: true 
     },
     {
         id: 18,
@@ -313,11 +330,12 @@ const category = [
         titre: "Angular",
         description: "Approfondissez vos connaissances d’Angular avec des questions de base.",
         nbrQuestion: 4,
-        time: 4
+        time: 4 , 
+        status: true 
     },
 ];
 
 
 
-//localStorage.QuizData = JSON.stringify(QuizData);
+// localStorage.QuizData = JSON.stringify(QuizData);
 // localStorage.category = JSON.stringify(category);
