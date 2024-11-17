@@ -63,4 +63,4 @@ Ce projet vise à offrir une plateforme engageante pour les quiz, intégrant dif
    git clone https://github.com/Sala7-dine/CodeQuiz.git
 
 2.🪟 Lien le site web 
-  https://sala7-dine.github.io/CodeQuiz/
+  https://sala7-dine.github.io/CodeQuiz/public
