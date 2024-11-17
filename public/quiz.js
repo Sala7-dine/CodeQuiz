@@ -30,9 +30,9 @@ function Quizze(value){
   // Response data-----------------------------------------------------------
 let res = (id , reponse) => {
   
-  let div = `<label class="z-50 btn">
+  let div = `<label class="z-50 max-md:w-28 btn">
            <input type="radio" name="reponse" class="hidden responseInput" onclick="selectResponse('response${id}' , ${id})" />
-           <div id="response${id}" class="px-8 py-4 max-md:px-6 max-md:py-2 rounded-lg cursor-pointer bg-gray-200">
+           <div id="response${id}" class="px-8 py-4 max-md:px-6 max-md:py-4 max-md:text-[12px] text-center rounded-lg cursor-pointer bg-gray-200">
                ${reponse}
            </div>
        </label>`

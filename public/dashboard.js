@@ -626,7 +626,6 @@ ajoutQuestionBtn.addEventListener("click" , ()=> {
 });
 
 
-
 questionCancel.addEventListener("click" , ()=>{
   ajoutModalQuestion.style.display = "none";
 })
