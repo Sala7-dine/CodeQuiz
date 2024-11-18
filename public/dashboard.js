@@ -382,11 +382,11 @@ checkbox.forEach(btn => {
     category.forEach(elem => {
       if(elem.id == value){
         if(btn.checked){
-          elem.status = true;
+          elem.status = false;
           localStorage.category = JSON.stringify(category);
             //console.log(elem);
           }else{
-            elem.status = false;
+            elem.status = true;
             localStorage.category = JSON.stringify(category);
             //console.log(elem);
           }
