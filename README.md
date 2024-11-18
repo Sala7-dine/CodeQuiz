@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/github/Sala7-dine/CodeQuiz.svg)](https://wakatime.com/badge/github/Sala7-dine/CodeQuiz)
+
 # 🧩 Projet Quiz Engageant 🎓
 
 ## 🌟 Introduction
